@@ -47,7 +47,7 @@ const DocsPage = ({
     };
   }, [headings]);
   return (
-    <article className="w-full max-w-200 mx-auto flex flex-col gap-6 px-4 py-6 h-full">
+    <article className="w-full max-w-220 mx-auto flex flex-col gap-6 px-4 py-6 h-full">
       <div>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <h1 className="min-w-0 flex-1 text-3xl font-semibold tracking-tight sm:text-3xl">

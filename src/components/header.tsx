@@ -5,15 +5,28 @@ import { cn } from "@/lib/utils";
 import { MainNav } from "./main-nav";
 import ToggleTheme from "./toggle-theme";
 
-const Header = ({ className }: { className?: string }) => {
+const Header = ({
+  className,
+  containerClassName,
+  mobileMenu = null,
+}: {
+  className?: string;
+  containerClassName?: string;
+  mobileMenu?: React.ReactNode;
+}) => {
   return (
     <header
       className={cn(
-        "sticky top-0 bg-background/5 z-10 backdrop-blur-md",
+        "sticky top-0 bg-background/5 z-10 backdrop-blur-md h-(--header-height)",
         className,
       )}
     >
-      <div className="max-w-400 h-(--header-height) mx-auto md:px-4 p-4 flex items-center justify-between">
+      <div
+        className={cn(
+          "max-w-400  mx-auto md:px-4 p-4 flex items-center justify-between",
+          containerClassName,
+        )}
+      >
         <div className="flex items-center">
           <Link
             to="/"
@@ -54,15 +67,7 @@ const Header = ({ className }: { className?: string }) => {
               />
             </svg>
           </Link>
-          {/* <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={toggleSidebar}
-          >
-            <MenuIcon />
-          </Button> */}
+          {mobileMenu}
           <MainNav items={siteConfig.navItems} />
         </div>
         <div className="flex items-center gap-2">

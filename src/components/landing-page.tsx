@@ -8,7 +8,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import type { ComponentProps } from "react";
-import mailHero from "@/assets/mail2.webp";
+// import mailHero from "@/assets/mail2.webp";
 import { LandingBentoDemos } from "@/components/landing-bento-demos";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
@@ -58,7 +58,11 @@ const pillars = [
 
 export const LandingPage = () => {
   return (
-    <main id="main-content" tabIndex={-1} className="min-h-svh outline-none">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="outline-none [--header-height:calc(--spacing(14))]"
+    >
       <Header className="fixed left-0 right-0 top-0" />
       <div className="min-w-0 pb-24 md:pb-32">
         <section
@@ -196,7 +200,7 @@ export const LandingPage = () => {
                 </p>
               </div>
 
-              <aside className="min-w-0 lg:justify-self-end">
+              {/* <aside className="min-w-0 lg:justify-self-end">
                 <figure className="relative overflow-hidden rounded-xl border border-border/80 bg-muted/30 shadow-lg ring-1 ring-border/30 dark:bg-muted/20">
                   <img
                     src={mailHero}
@@ -212,7 +216,7 @@ export const LandingPage = () => {
                     <span translate="no">{siteConfig.name}</span>
                   </figcaption>
                 </figure>
-              </aside>
+              </aside> */}
             </div>
 
             <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">

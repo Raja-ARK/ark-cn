@@ -30,7 +30,7 @@ export const DocsSidebar = ({
 
         if (!acc[directory]) {
           acc[directory] = {
-            title: directory === "." ? null : directory,
+            title: directory === "." ? "Overview" : directory,
             items: [],
           };
         }
@@ -45,7 +45,7 @@ export const DocsSidebar = ({
       {} as Record<
         string,
         {
-          title: string | null;
+          title: string;
           items: { title: string | null; url: string }[];
         }
       >,
@@ -54,19 +54,19 @@ export const DocsSidebar = ({
   return (
     <Sidebar
       className={cn(
-        "sticky top-(--header-height) h-[calc(100svh-var(--header-height))]!",
+        "sticky top-(--header-height) h-[calc(100svh-var(--header-height))]! group-data-[side=left]:border-r-0 z-0",
         className,
       )}
+      side="left"
       {...props}
     >
       <SidebarContent>
         {Object.entries(navItems)?.map(([key, section]) => (
           <SidebarGroup key={key}>
-            {section.title && (
-              <SidebarGroupLabel className="capitalize">
-                {section.title}
-              </SidebarGroupLabel>
-            )}
+            <SidebarGroupLabel className="capitalize">
+              {section.title}
+            </SidebarGroupLabel>
+
             <SidebarGroupContent>
               <SidebarMenu>
                 {section.items.map((item) => {

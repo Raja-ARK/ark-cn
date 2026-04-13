@@ -490,7 +490,7 @@ export const ComboboxChips = ({
       {startAddon && (
         <div
           aria-hidden="true"
-          className="flex shrink-0 items-center ps-2 opacity-80 has-[~[data-size=sm]]:has-[+[data-slot=combobox-chip]]:pe-1.5 has-[~[data-size=sm]]:ps-1.5 has-[+[data-slot=combobox-chip]]:pe-2 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:-ms-0.5 [&_svg]:-me-1.5"
+          className="flex shrink-0 items-center ps-2 opacity-80 has-[~[data-size=sm]]:has-[+[data-slot=combobox-chip]]:pe-1.5 has-[~[data-size=sm]]:ps-1.5 has-[+[data-slot=combobox-chip]]:pe-2"
           data-slot="combobox-start-addon"
         >
           {startAddon}
@@ -500,7 +500,7 @@ export const ComboboxChips = ({
       {endAddon && (
         <div
           aria-hidden="true"
-          className="flex shrink-0 items-center pe-2 opacity-80 has-[~[data-size=sm]]:has-[+[data-slot=combobox-chip]]:ps-1.5 has-[~[data-size=sm]]:pe-1.5 has-[+[data-slot=combobox-chip]]:ps-2 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:-ms-0.5 [&_svg]:-me-1.5"
+          className="flex shrink-0 items-center pe-2 opacity-80 has-[~[data-size=sm]]:has-[+[data-slot=combobox-chip]]:ps-1.5 has-[~[data-size=sm]]:pe-1.5 has-[+[data-slot=combobox-chip]]:ps-2"
           data-slot="combobox-end-addon"
         >
           {endAddon}

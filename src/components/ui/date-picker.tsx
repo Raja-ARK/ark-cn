@@ -12,6 +12,8 @@ import {
   type ListCollection,
   Select,
 } from "@ark-ui/react/select";
+import { isSameDay } from "@internationalized/date";
+import type { VariantProps } from "class-variance-authority";
 import {
   Calendar,
   CheckIcon,
@@ -22,6 +24,11 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+} from "@/components/ui/button-group";
+import { Input } from "@/components/ui/input";
 import {
   InputGroup,
   InputGroupAddon,
@@ -84,51 +91,141 @@ export const DatePickerInput = ({
   containerClassName?: string;
   separator?: string;
 }) => {
-  if (variant === "button") {
-    return (
-      <DatePickerPrimitive.Control className={cn("w-full", containerClassName)}>
-        <DatePickerPrimitive.Trigger asChild>
-          <Button variant="outline" className={cn("w-full", className)}>
-            {startAddon}
-            <DatePickerPrimitive.ValueText
-              placeholder={placeholder}
-              separator={separator}
-              className="text-start flex-1"
-            />
-            {endAddon}
-            <Calendar className="size-4" />
-          </Button>
-        </DatePickerPrimitive.Trigger>
-      </DatePickerPrimitive.Control>
-    );
-  }
-
   return (
-    <DatePickerPrimitive.Control asChild>
-      <InputGroup className={cn("w-full", containerClassName)}>
-        {startAddon && (
-          <InputGroupAddon align={"inline-start"}>{startAddon}</InputGroupAddon>
-        )}
-        <DatePickerPrimitive.Input asChild placeholder={placeholder}>
-          <InputGroupInput size={size} className={cn("w-full", className)} />
-        </DatePickerPrimitive.Input>
-        <InputGroupAddon align={"inline-end"}>
-          {endAddon}
-          {showClear && (
-            <DatePickerPrimitive.ClearTrigger asChild>
-              <Button variant="ghost" size={"icon-sm"}>
-                <XIcon />
-              </Button>
-            </DatePickerPrimitive.ClearTrigger>
-          )}
-          <DatePickerPrimitive.Trigger asChild>
-            <Button variant="ghost" size={"icon-sm"}>
-              <Calendar />
-            </Button>
-          </DatePickerPrimitive.Trigger>
-        </InputGroupAddon>
-      </InputGroup>
-    </DatePickerPrimitive.Control>
+    <DatePickerPrimitive.Context>
+      {({ selectionMode, value, disabled, setValue }) => {
+        if (selectionMode === "multiple") {
+          return (
+            <DatePickerPrimitive.Control
+              className={cn(
+                "relative inline-flex items-center w-full flex-wrap gap-1 rounded-lg border border-input bg-background not-dark:bg-clip-padding p-[calc(--spacing(1)-1px)] text-base shadow-xs/5 outline-none ring-ring/24 transition-shadow *:min-h-7 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] not-has-disabled:not-focus-within:not-data-invalid:before:shadow-[0_1px_--theme(--color-black/4%)] focus-within:border-ring focus-within:ring-[3px] has-disabled:pointer-events-none has-data-[size=lg]:min-h-10 has-data-[size=sm]:min-h-8 has-data-invalid:border-destructive/36 has-autofill:bg-foreground/4 has-disabled:opacity-64 has-[:disabled,:focus-within,[data-invalid]]:shadow-none focus-within:has-data-invalid:border-destructive/64 focus-within:has-data-invalid:ring-destructive/16 has-data-[size=lg]:*:min-h-8 has-data-[size=sm]:*:min-h-6 sm:min-h-8 sm:text-sm sm:has-data-[size=lg]:min-h-9 sm:has-data-[size=sm]:min-h-7 sm:*:min-h-6 sm:has-data-[size=lg]:*:min-h-7 sm:has-data-[size=sm]:*:min-h-5 dark:not-has-disabled:bg-input/32 dark:has-autofill:bg-foreground/8 dark:has-data-invalid:ring-destructive/24 dark:not-has-disabled:not-focus-within:not-data-invalid:before:shadow-[0_-1px_--theme(--color-white/6%)]",
+                className,
+              )}
+            >
+              {startAddon && (
+                <div
+                  aria-hidden="true"
+                  className="flex shrink-0 items-center ps-2 opacity-80 has-[~[data-size=sm]]:has-[+[data-slot=date-picker-chip]]:pe-1.5 has-[~[data-size=sm]]:ps-1.5 has-[+[data-slot=date-picker-chip]]:pe-2"
+                  data-slot="date-picker-start-addon"
+                >
+                  {startAddon}
+                </div>
+              )}
+              <div className="flex flex-wrap items-center gap-1 flex-1">
+                {value && value.length > 0 ? (
+                  value?.map((date) => {
+                    return (
+                      <span
+                        className={cn(
+                          "inline-flex h-6 max-w-full items-center gap-1 rounded-md border border-border bg-muted/50 px-1.5 text-xs",
+                          className,
+                        )}
+                        data-slot="date-picker-chip"
+                      >
+                        <span className="truncate">{date?.toString()}</span>
+                        {!disabled && (
+                          <button
+                            type="button"
+                            className="cursor-pointer inline-flex size-5 shrink-0 items-center justify-center rounded text-muted-foreground hover:bg-background hover:text-foreground p-0.5 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background focus-visible:outline-none"
+                            onClick={() => {
+                              setValue(
+                                value?.filter((v) => !isSameDay(v, date)),
+                              );
+                            }}
+                          >
+                            <XIcon className="size-3" />
+                          </button>
+                        )}
+                      </span>
+                    );
+                  })
+                ) : (
+                  <span className="truncate pl-3">{placeholder}</span>
+                )}
+              </div>
+              <div
+                aria-hidden="true"
+                className="flex shrink-0 items-center pe-2 opacity-80 has-[~[data-size=sm]]:has-[+[data-slot=date-picker-chip]]:ps-1.5 has-[~[data-size=sm]]:pe-1.5 has-[+[data-slot=date-picker-chip]]:ps-2"
+                data-slot="date-picker-end-addon"
+              >
+                {endAddon}
+                <DatePickerTrigger size={"icon-sm"} variant={"ghost"} />
+              </div>
+            </DatePickerPrimitive.Control>
+          );
+        }
+
+        if (variant === "button") {
+          return (
+            <DatePickerPrimitive.Control
+              className={cn("w-full", containerClassName)}
+            >
+              <DatePickerPrimitive.Trigger asChild>
+                <Button variant="outline" className={cn("w-full", className)}>
+                  {startAddon}
+                  <DatePickerPrimitive.ValueText
+                    placeholder={placeholder}
+                    separator={separator}
+                    className="text-start flex-1"
+                  />
+                  {endAddon}
+                  <Calendar className="size-4" />
+                </Button>
+              </DatePickerPrimitive.Trigger>
+            </DatePickerPrimitive.Control>
+          );
+        }
+
+        if (selectionMode === "range") {
+          return (
+            <DatePickerControl asChild>
+              <ButtonGroup>
+                <DatePickerInputInput size={size} index={0} />
+                <ButtonGroupSeparator />
+                <DatePickerInputInput size={size} index={1} />
+                {value?.length > 0 && <ButtonGroupSeparator />}
+                <DatePickerClearTrigger size={size} />
+                <ButtonGroupSeparator />
+                <DatePickerTrigger size={size} />
+              </ButtonGroup>
+            </DatePickerControl>
+          );
+        }
+
+        return (
+          <DatePickerPrimitive.Control asChild>
+            <InputGroup className={cn("w-full", containerClassName)}>
+              {startAddon && (
+                <InputGroupAddon align={"inline-start"}>
+                  {startAddon}
+                </InputGroupAddon>
+              )}
+              <DatePickerPrimitive.Input asChild placeholder={placeholder}>
+                <InputGroupInput
+                  size={size}
+                  className={cn("w-full", className)}
+                />
+              </DatePickerPrimitive.Input>
+              <InputGroupAddon align={"inline-end"}>
+                {endAddon}
+                {showClear && (
+                  <DatePickerPrimitive.ClearTrigger asChild>
+                    <Button variant="ghost" size={"icon-sm"}>
+                      <XIcon />
+                    </Button>
+                  </DatePickerPrimitive.ClearTrigger>
+                )}
+                <DatePickerPrimitive.Trigger asChild>
+                  <Button variant="ghost" size={"icon-sm"}>
+                    <Calendar />
+                  </Button>
+                </DatePickerPrimitive.Trigger>
+              </InputGroupAddon>
+            </InputGroup>
+          </DatePickerPrimitive.Control>
+        );
+      }}
+    </DatePickerPrimitive.Context>
   );
 };
 
@@ -139,24 +236,45 @@ export const DatePickerControl = ({
 );
 
 export const DatePickerInputInput = ({
+  size = "default",
+  className,
   ...props
-}: DatePickerPrimitive.InputProps) => (
-  <DatePickerPrimitive.Input data-slot="date-picker-input" {...props} />
+}: Omit<DatePickerPrimitive.InputProps, "size"> & {
+  size?: "sm" | "default" | "lg" | number;
+}) => (
+  <DatePickerPrimitive.Input asChild {...props}>
+    <Input size={size} className={cn("w-full", className)} />
+  </DatePickerPrimitive.Input>
 );
 
 export const DatePickerTrigger = ({
+  size = "icon",
+  variant = "outline",
   ...props
-}: DatePickerPrimitive.TriggerProps) => (
-  <DatePickerPrimitive.Trigger data-slot="date-picker-trigger" {...props} />
+}: Omit<DatePickerPrimitive.TriggerProps, "size"> & {
+  size?: VariantProps<typeof buttonVariants>["size"];
+  variant?: VariantProps<typeof buttonVariants>["variant"];
+}) => (
+  <DatePickerPrimitive.Trigger asChild {...props}>
+    <Button variant={variant} size={size}>
+      <Calendar className="size-4" />
+    </Button>
+  </DatePickerPrimitive.Trigger>
 );
 
 export const DatePickerClearTrigger = ({
+  size = "icon",
+  variant = "outline",
   ...props
-}: DatePickerPrimitive.ClearTriggerProps) => (
-  <DatePickerPrimitive.ClearTrigger
-    data-slot="date-picker-clear-trigger"
-    {...props}
-  />
+}: Omit<DatePickerPrimitive.ClearTriggerProps, "size"> & {
+  size?: VariantProps<typeof buttonVariants>["size"];
+  variant?: VariantProps<typeof buttonVariants>["variant"];
+}) => (
+  <DatePickerPrimitive.ClearTrigger asChild {...props}>
+    <Button variant={variant} size={size}>
+      <XIcon />
+    </Button>
+  </DatePickerPrimitive.ClearTrigger>
 );
 
 export const DatePickerViewControl = ({

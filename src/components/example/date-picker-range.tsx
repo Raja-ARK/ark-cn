@@ -7,12 +7,12 @@ import {
   DatePickerLabel,
 } from "@/components/ui/date-picker";
 
-const DatePickerDemo = () => (
-  <DatePicker selectionMode="multiple" className="w-72">
+const DatePickerRange = () => (
+  <DatePicker selectionMode="single" className="w-64">
     <DatePickerLabel>Date</DatePickerLabel>
-    <DatePickerInput placeholder="Select a date" />
+    <DatePickerInput variant="button" placeholder="Select a date" />
     <DatePickerCalendar />
   </DatePicker>
 );
 
-export default DatePickerDemo;
+export default DatePickerRange;

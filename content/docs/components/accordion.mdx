@@ -23,11 +23,25 @@ referenceLink: "https://ark-ui.com/docs/components/accordion"
     <DocSteps>
       <DocStep>
         Install the following dependency:
-        <PackageInstall pkg="@ark-ui/react" />
+        <PackageInstall pkg="@ark-ui/react lucide-react tw-animate-css" />
       </DocStep>
       <DocStep>
         Copy the component into your project (for example under `components/ui`):
         <ComponentSource name="accordion" title="components/ui/accordion.tsx" />
+      </DocStep>
+      <DocStep>
+        Add the following CSS to your stylesheet (e.g. `styles.css`):
+
+        ```css
+        @keyframes accordion-open-x {
+          from { width: 0; opacity: 0; }
+          to { width: var(--width); opacity: 1; }
+        }
+        @keyframes accordion-close-x {
+          from { width: var(--width); opacity: 1; }
+          to { width: 0; opacity: 0; }
+        }
+        ```
       </DocStep>
       <DocStep>
         Ensure Tailwind CSS v4, `class-variance-authority`, and your `cn` helper match this repo (see the Installation page). Update import paths (`@/components/...`) to match your app.
@@ -100,11 +114,9 @@ Combine **`lazyMount`** with **`unmountOnExit`** to defer rendering panel conten
 
 `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionPanel`, `AccordionContext`, `AccordionProvider`, and **`useAccordion`** mirror **`@ark-ui/react/accordion`**. All props and DOM behavior are defined by Ark unless you see an **ark-cn-only** row below.
 
-### Props in ARK CN
-
 **`AccordionTrigger`** and **`AccordionPanel`** add optional props on top of Ark’s **`ItemTrigger`** / **`ItemContent`**:
 
-<AccordionDocSupplement section="extension-props" />
+<ComponentDocSupplement component="accordion" section="extension-props" />
 
 See the [ARK UI documentation](https://ark-ui.com/docs/components/accordion) for the full API.
 

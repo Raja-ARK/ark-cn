@@ -13,6 +13,16 @@ Ark UI is the **headless** library behind these components. Install it in any Re
 
 <PackageInstall pkg="@ark-ui/react" />
 
+Ark CN is not officially registered in shadcn yet, so add the registry manually in your `components.json`:
+
+```json
+{
+  "registries": {
+    "@ark-cn": "http://localhost:3000/r/{name}.json"
+  }
+}
+```
+
 Use the official guide for prerequisites, package install, adding a first component (compound `Root` / part APIs), and styling with `data-scope` / `data-part`:
 
 - **[Getting started (React) — Ark UI](https://ark-ui.com/react/docs/overview/getting-started)**
@@ -31,4 +41,4 @@ What to take from that page for an Ark CN–style stack:
 - **Path aliases and component folder** — Keep a single place for owned UI (here: `src/components/ui/`).
 - **“Existing project”** — If you are not using their CLI end-to-end, still follow the manual pieces that match your bundler (Vite, Start, etc.) so class merging, Tailwind content paths, and TypeScript resolve cleanly.
 
-Individual shadcn components are **React Aria / Radix**-oriented; Ark CN swaps that layer for **Ark UI** while keeping the same **ownership and composition** story as shadcn.
+Individual shadcn components are **Radix / Base UI**-oriented; Ark CN swaps that layer for **Ark UI** while keeping the same **ownership and composition** story as shadcn.

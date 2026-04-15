@@ -4,8 +4,8 @@ import { PasswordInput as PasswordInputPrimitive } from "@ark-ui/react/password-
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
-import { InputGroup, InputGroupAddon, InputGroupInput } from "./input-group";
+import { Button } from "@/components/ui/button";
+import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 
 export type PasswordInputRootProps = PasswordInputPrimitive.RootProps;
 

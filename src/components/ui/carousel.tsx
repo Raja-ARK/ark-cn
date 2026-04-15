@@ -9,7 +9,7 @@ import {
   PlayIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button, type buttonVariants } from "./button";
+import { Button, type buttonVariants } from "@/components/ui/button";
 
 export const Carousel = ({ ...props }: CarouselPrimitive.RootProps) => {
   return <CarouselPrimitive.Root {...props} />;

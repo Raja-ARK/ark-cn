@@ -9,7 +9,7 @@ import {
   ImageCropperImage,
   ImageCropperSelection,
   ImageCropperViewport,
-} from "./image-cropper";
+} from "@/components/ui/image-cropper";
 
 export type ZoomImageProps = Omit<
   ComponentProps<typeof ImageCropper>,

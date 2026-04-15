@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { type ComponentProps, forwardRef } from "react";
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "./button";
+import { buttonVariants } from "@/components/ui/button";
 
 export const AlertDialog = ({
   closeOnInteractOutside = false,

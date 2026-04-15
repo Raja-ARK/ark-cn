@@ -11,6 +11,7 @@ import {
   ImageCropperViewport,
   imageCropperHandles,
 } from "@/components/ui/image-cropper";
+import { Button } from "@/components/ui/button";
 
 const IMAGE_CROPPER_SAMPLE =
   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800";
@@ -21,27 +22,29 @@ const ImageCropperControlledZoomDemo = () => {
   return (
     <div className="flex w-full max-w-md flex-col gap-3">
       <div className="flex items-center gap-2">
-        <button
+        <Button
           aria-label="Zoom out"
-          type="button"
+          variant="outline"
+          size="icon-sm"
           onClick={() => {
             setZoom((z) => Math.max(1, z - 0.1));
           }}
         >
           <ZoomOutIcon aria-hidden className="size-4" />
-        </button>
+        </Button>
         <span className="min-w-12 text-center font-mono text-muted-foreground text-xs tabular-nums">
           {zoom.toFixed(1)}×
         </span>
-        <button
+        <Button
           aria-label="Zoom in"
-          type="button"
+          variant="outline"
+          size="icon-sm"
           onClick={() => {
             setZoom((z) => Math.min(5, z + 0.1));
           }}
         >
           <ZoomInIcon aria-hidden className="size-4" />
-        </button>
+        </Button>
       </div>
       <ImageCropper
         maxZoom={5}

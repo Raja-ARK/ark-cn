@@ -23,7 +23,7 @@ referenceLink: "https://ark-ui.com/docs/components/date-picker"
     <DocSteps>
       <DocStep>
         Install the dependency required by this primitive:
-        <PackageInstall pkg="@ark-ui/react" />
+        <PackageInstall pkg="@ark-ui/react lucide-react class-variance-authority @internationalized/date" />
       </DocStep>
       <DocStep>
         Copy the component source into your app:
@@ -96,10 +96,8 @@ Read exported parts in `src/components/ui/date-picker.tsx` and compose the primi
 
 ## API reference
 
-This component mirrors the upstream Ark UI primitive.
+This component mirrors the upstream Ark UI primitive. All props and DOM behavior are defined by Ark unless you see an **ark-cn-only** row below.
+
+<ComponentDocSupplement component="date-picker" section="extension-props" />
 
 See the [ARK UI documentation](https://ark-ui.com/docs/components/date-picker) for the full API.
-
-## Accessibility
-
-See the [Ark UI documentation](https://ark-ui.com/docs/components/date-picker#accessibility) for clarification.

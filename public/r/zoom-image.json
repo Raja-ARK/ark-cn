@@ -6,10 +6,13 @@
   "dependencies": [
     "@ark-ui/react"
   ],
+  "registryDependencies": [
+    "image-cropper"
+  ],
   "files": [
     {
       "path": "src/components/ui/zoom-image.tsx",
-      "content": "\"use client\";\r\n\r\nimport type { ComponentProps } from \"react\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nimport {\r\n  ImageCropper,\r\n  ImageCropperImage,\r\n  ImageCropperSelection,\r\n  ImageCropperViewport,\r\n} from \"./image-cropper\";\r\n\r\nexport type ZoomImageProps = Omit<\r\n  ComponentProps<typeof ImageCropper>,\r\n  \"children\" | \"fixedCropArea\"\r\n> & {\r\n  alt: string;\r\n  src: string;\r\n  viewportClassName?: string;\r\n};\r\n\r\n/** Pinch / wheel zoom and pan preview using Image Cropper with a fixed full-viewport crop (no resize handles). */\r\nexport const ZoomImage = ({\r\n  alt,\r\n  className,\r\n  src,\r\n  viewportClassName,\r\n  ...props\r\n}: ZoomImageProps) => (\r\n  <ImageCropper\r\n    fixedCropArea\r\n    className={cn(\r\n      \"max-w-none [--cropper-overlay-color:transparent]\",\r\n      className,\r\n    )}\r\n    {...props}\r\n  >\r\n    <ImageCropperViewport\r\n      className={cn(\r\n        \"relative aspect-video w-full overflow-hidden rounded-lg bg-muted\",\r\n        viewportClassName,\r\n      )}\r\n    >\r\n      <ImageCropperImage alt={alt} src={src} />\r\n      <ImageCropperSelection className=\"cursor-grab border-transparent data-dragging:cursor-grabbing\" />\r\n    </ImageCropperViewport>\r\n  </ImageCropper>\r\n);\r\n",
+      "content": "\"use client\";\n\nimport type { ComponentProps } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport {\n  ImageCropper,\n  ImageCropperImage,\n  ImageCropperSelection,\n  ImageCropperViewport,\n} from \"@/components/ui/image-cropper\";\n\nexport type ZoomImageProps = Omit<\n  ComponentProps<typeof ImageCropper>,\n  \"children\" | \"fixedCropArea\"\n> & {\n  alt: string;\n  src: string;\n  viewportClassName?: string;\n};\n\n/** Pinch / wheel zoom and pan preview using Image Cropper with a fixed full-viewport crop (no resize handles). */\nexport const ZoomImage = ({\n  alt,\n  className,\n  src,\n  viewportClassName,\n  ...props\n}: ZoomImageProps) => (\n  <ImageCropper\n    fixedCropArea\n    className={cn(\n      \"max-w-none [--cropper-overlay-color:transparent]\",\n      className,\n    )}\n    {...props}\n  >\n    <ImageCropperViewport\n      className={cn(\n        \"relative aspect-video w-full overflow-hidden rounded-lg bg-muted\",\n        viewportClassName,\n      )}\n    >\n      <ImageCropperImage alt={alt} src={src} />\n      <ImageCropperSelection className=\"cursor-grab border-transparent data-dragging:cursor-grabbing\" />\n    </ImageCropperViewport>\n  </ImageCropper>\n);\n",
       "type": "registry:ui",
       "target": "src/components/ui/zoom-image.tsx"
     }

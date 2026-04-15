@@ -23,11 +23,60 @@ referenceLink: "https://ark-ui.com/docs/components/toast"
     <DocSteps>
       <DocStep>
         Install the dependency required by this primitive:
-        <PackageInstall pkg="@ark-ui/react" />
+        <PackageInstall pkg="@ark-ui/react lucide-react" />
       </DocStep>
       <DocStep>
         Copy the component source into your app:
         <ComponentSource name="toast" title="components/ui/toast.tsx" />
+      </DocStep>
+      <DocStep>
+        Add the following CSS to your stylesheet (e.g. `styles.css`):
+
+        ```css
+        @theme inline {
+          --color-destructive-foreground: var(--destructive-foreground);
+          --color-info: var(--info);
+          --color-info-foreground: var(--info-foreground);
+          --color-success: var(--success);
+          --color-success-foreground: var(--success-foreground);
+          --color-warning: var(--warning);
+          --color-warning-foreground: var(--warning-foreground);
+        }
+        :root {
+          --destructive-foreground: var(--color-red-400);
+          --info: var(--color-blue-500);
+          --info-foreground: var(--color-blue-700);
+          --success: var(--color-emerald-500);
+          --success-foreground: var(--color-emerald-700);
+          --warning: var(--color-amber-500);
+          --warning-foreground: var(--color-amber-700);
+        }
+        .dark {
+          --destructive-foreground: var(--color-red-400);
+          --info: var(--color-blue-500);
+          --info-foreground: var(--color-blue-400);
+          --success: var(--color-emerald-500);
+          --success-foreground: var(--color-emerald-400);
+          --warning: var(--color-amber-500);
+          --warning-foreground: var(--color-amber-400);
+        }
+        @layer base {
+          [data-scope="toast"][data-part="root"] {
+            translate: var(--x) var(--y);
+            scale: var(--scale);
+            z-index: var(--z-index);
+            height: var(--height);
+            opacity: var(--opacity);
+            will-change: translate, opacity, scale;
+            transition: translate 400ms, scale 400ms, opacity 400ms, height 400ms, box-shadow 200ms;
+            transition-timing-function: cubic-bezier(0.21, 1.02, 0.73, 1);
+          }
+          [data-scope="toast"][data-part="root"][data-state="closed"] {
+            transition: translate 400ms, scale 400ms, opacity 200ms;
+            transition-timing-function: cubic-bezier(0.06, 0.71, 0.55, 1);
+          }
+        }
+        ```
       </DocStep>
       <DocStep>
         Update import aliases to match your project setup.
@@ -88,10 +137,8 @@ Read exported parts in `src/components/ui/toast.tsx` and compose the primitive a
 
 ## API reference
 
-This component mirrors the upstream Ark UI primitive.
+This component mirrors the upstream Ark UI primitive. All props and DOM behavior are defined by Ark unless you see an **ark-cn-only** row below.
+
+<ComponentDocSupplement component="toast" section="extension-props" />
 
 See the [ARK UI documentation](https://ark-ui.com/docs/components/toast) for the full API.
-
-## Accessibility
-
-See the [Ark UI documentation](https://ark-ui.com/docs/components/toast#accessibility) for clarification.

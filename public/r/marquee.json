@@ -9,10 +9,74 @@
   "files": [
     {
       "path": "src/components/ui/marquee.tsx",
-      "content": "\"use client\";\r\n\r\nimport {\r\n  Marquee as MarqueePrimitive,\r\n  useMarquee,\r\n  useMarqueeContext,\r\n} from \"@ark-ui/react/marquee\";\r\nimport type { ComponentProps } from \"react\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport type MarqueeProps = ComponentProps<typeof MarqueePrimitive.Root>;\r\nexport type MarqueeViewportProps = ComponentProps<\r\n  typeof MarqueePrimitive.Viewport\r\n>;\r\nexport type MarqueeContentProps = ComponentProps<\r\n  typeof MarqueePrimitive.Content\r\n>;\r\nexport type MarqueeItemProps = ComponentProps<typeof MarqueePrimitive.Item>;\r\nexport type MarqueeEdgeProps = ComponentProps<typeof MarqueePrimitive.Edge>;\r\nexport type MarqueeRootProviderProps = ComponentProps<\r\n  typeof MarqueePrimitive.RootProvider\r\n>;\r\n\r\nexport const Marquee = ({ className, ...props }: MarqueeProps) => (\r\n  <MarqueePrimitive.Root\r\n    className={cn(\r\n      \"w-full max-w-full text-foreground\",\r\n      \"data-[orientation=horizontal]:h-20 data-[orientation=vertical]:h-60\",\r\n      className,\r\n    )}\r\n    data-slot=\"marquee-root\"\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport const MarqueeViewport = ({\r\n  className,\r\n  ...props\r\n}: MarqueeViewportProps) => (\r\n  <MarqueePrimitive.Viewport\r\n    className={cn(\"h-full w-full\", className)}\r\n    data-slot=\"marquee-viewport\"\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport const MarqueeContent = ({\r\n  className,\r\n  ...props\r\n}: MarqueeContentProps) => (\r\n  <MarqueePrimitive.Content\r\n    className={cn(className)}\r\n    data-slot=\"marquee-content\"\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport const MarqueeItem = ({ className, ...props }: MarqueeItemProps) => (\r\n  <MarqueePrimitive.Item\r\n    className={cn(\r\n      \"flex shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-md border border-border px-6 py-4 text-sm select-none\",\r\n      className,\r\n    )}\r\n    data-slot=\"marquee-item\"\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport const MarqueeEdge = ({ className, ...props }: MarqueeEdgeProps) => (\r\n  <MarqueePrimitive.Edge\r\n    className={cn(\"data-[orientation=horizontal]:w-[20%]\", className)}\r\n    data-slot=\"marquee-edge\"\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport const MarqueeRootProvider = ({\r\n  className,\r\n  ...props\r\n}: MarqueeRootProviderProps) => (\r\n  <MarqueePrimitive.RootProvider\r\n    className={cn(\r\n      \"w-full max-w-full text-foreground\",\r\n      \"data-[orientation=horizontal]:h-20 data-[orientation=vertical]:h-60\",\r\n      className,\r\n    )}\r\n    data-slot=\"marquee-root\"\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport const MarqueeContext = MarqueePrimitive.Context;\r\n\r\nexport type {\r\n  MarqueePauseStatusDetails,\r\n  MarqueeSide,\r\n} from \"@ark-ui/react/marquee\";\r\nexport { useMarquee, useMarqueeContext };\r\n",
+      "content": "\"use client\";\n\nimport {\n  Marquee as MarqueePrimitive,\n  useMarquee,\n  useMarqueeContext,\n} from \"@ark-ui/react/marquee\";\nimport type { ComponentProps } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport type MarqueeProps = ComponentProps<typeof MarqueePrimitive.Root>;\nexport type MarqueeViewportProps = ComponentProps<\n  typeof MarqueePrimitive.Viewport\n>;\nexport type MarqueeContentProps = ComponentProps<\n  typeof MarqueePrimitive.Content\n>;\nexport type MarqueeItemProps = ComponentProps<typeof MarqueePrimitive.Item>;\nexport type MarqueeEdgeProps = ComponentProps<typeof MarqueePrimitive.Edge>;\nexport type MarqueeRootProviderProps = ComponentProps<\n  typeof MarqueePrimitive.RootProvider\n>;\n\nexport const Marquee = ({ className, ...props }: MarqueeProps) => (\n  <MarqueePrimitive.Root\n    className={cn(\n      \"w-full max-w-full text-foreground\",\n      \"data-[orientation=horizontal]:h-20 data-[orientation=vertical]:h-60\",\n      className,\n    )}\n    data-slot=\"marquee-root\"\n    {...props}\n  />\n);\n\nexport const MarqueeViewport = ({\n  className,\n  ...props\n}: MarqueeViewportProps) => (\n  <MarqueePrimitive.Viewport\n    className={cn(\"h-full w-full\", className)}\n    data-slot=\"marquee-viewport\"\n    {...props}\n  />\n);\n\nexport const MarqueeContent = ({\n  className,\n  ...props\n}: MarqueeContentProps) => (\n  <MarqueePrimitive.Content\n    className={cn(className)}\n    data-slot=\"marquee-content\"\n    {...props}\n  />\n);\n\nexport const MarqueeItem = ({ className, ...props }: MarqueeItemProps) => (\n  <MarqueePrimitive.Item\n    className={cn(\n      \"flex shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-md border border-border px-6 py-4 text-sm select-none\",\n      className,\n    )}\n    data-slot=\"marquee-item\"\n    {...props}\n  />\n);\n\nexport const MarqueeEdge = ({ className, ...props }: MarqueeEdgeProps) => (\n  <MarqueePrimitive.Edge\n    className={cn(\"data-[orientation=horizontal]:w-[20%]\", className)}\n    data-slot=\"marquee-edge\"\n    {...props}\n  />\n);\n\nexport const MarqueeRootProvider = ({\n  className,\n  ...props\n}: MarqueeRootProviderProps) => (\n  <MarqueePrimitive.RootProvider\n    className={cn(\n      \"w-full max-w-full text-foreground\",\n      \"data-[orientation=horizontal]:h-20 data-[orientation=vertical]:h-60\",\n      className,\n    )}\n    data-slot=\"marquee-root\"\n    {...props}\n  />\n);\n\nexport const MarqueeContext = MarqueePrimitive.Context;\n\nexport type {\n  MarqueePauseStatusDetails,\n  MarqueeSide,\n} from \"@ark-ui/react/marquee\";\nexport { useMarquee, useMarqueeContext };\n",
       "type": "registry:ui",
       "target": "src/components/ui/marquee.tsx"
     }
   ],
+  "css": {
+    "@keyframes marquee-x": {
+      "from": {
+        "transform": "translateX(0)"
+      },
+      "to": {
+        "transform": "translateX(var(--marquee-translate))"
+      }
+    },
+    "@keyframes marquee-y": {
+      "from": {
+        "transform": "translateY(0)"
+      },
+      "to": {
+        "transform": "translateY(var(--marquee-translate))"
+      }
+    },
+    "[data-slot=\"marquee-root\"][data-paused] *, [data-slot=\"marquee-root\"][data-paused]": {
+      "animation-play-state": "paused !important"
+    },
+    "[data-slot=\"marquee-content\"]": {
+      "animation-timing-function": "linear",
+      "animation-duration": "var(--marquee-duration)",
+      "animation-delay": "var(--marquee-delay)",
+      "animation-iteration-count": "var(--marquee-loop-count)"
+    },
+    "[data-slot=\"marquee-content\"][data-side=\"start\"], [data-slot=\"marquee-content\"][data-side=\"end\"]": {
+      "animation-name": "marquee-x"
+    },
+    "[data-slot=\"marquee-content\"][data-side=\"top\"], [data-slot=\"marquee-content\"][data-side=\"bottom\"]": {
+      "animation-name": "marquee-y"
+    },
+    "[data-slot=\"marquee-content\"][data-reverse]": {
+      "animation-direction": "reverse"
+    },
+    "@media (prefers-reduced-motion: reduce)": {
+      "[data-slot=\"marquee-content\"]": {
+        "animation": "none !important"
+      }
+    },
+    "[data-slot=\"marquee-edge\"]": {
+      "z-index": "10"
+    },
+    "[data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"start\"]": {
+      "background": "linear-gradient(to right, var(--background), transparent)"
+    },
+    "[dir=\"rtl\"] [data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"start\"]": {
+      "background": "linear-gradient(to left, var(--background), transparent)"
+    },
+    "[data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"end\"]": {
+      "background": "linear-gradient(to left, var(--background), transparent)"
+    },
+    "[dir=\"rtl\"] [data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"end\"]": {
+      "background": "linear-gradient(to right, var(--background), transparent)"
+    },
+    "[data-slot=\"marquee-edge\"][data-orientation=\"vertical\"][data-side=\"top\"]": {
+      "height": "20%",
+      "background": "linear-gradient(to bottom, var(--background), transparent)"
+    },
+    "[data-slot=\"marquee-edge\"][data-orientation=\"vertical\"][data-side=\"bottom\"]": {
+      "height": "20%",
+      "background": "linear-gradient(to top, var(--background), transparent)"
+    }
+  },
   "type": "registry:ui"
 }

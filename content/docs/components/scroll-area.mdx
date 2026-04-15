@@ -30,6 +30,20 @@ referenceLink: "https://ark-ui.com/docs/components/scroll-area"
         <ComponentSource name="scroll-area" title="components/ui/scroll-area.tsx" />
       </DocStep>
       <DocStep>
+        Add the following CSS to your stylesheet (e.g. `styles.css`):
+
+        ```css
+        @layer base {
+          [data-scope="scroll-area"][data-part="viewport"] {
+            scrollbar-width: none;
+          }
+          [data-scope="scroll-area"][data-part="viewport"]::-webkit-scrollbar {
+            display: none;
+          }
+        }
+        ```
+      </DocStep>
+      <DocStep>
         Update import aliases to match your project setup.
       </DocStep>
     </DocSteps>
@@ -88,10 +102,8 @@ Read exported parts in `src/components/ui/scroll-area.tsx` and compose the primi
 
 ## API reference
 
-This component mirrors the upstream Ark UI primitive.
+This component mirrors the upstream Ark UI primitive. All props and DOM behavior are defined by Ark unless you see an **ark-cn-only** row below.
+
+<ComponentDocSupplement component="scroll-area" section="extension-props" />
 
 See the [ARK UI documentation](https://ark-ui.com/docs/components/scroll-area) for the full API.
-
-## Accessibility
-
-See the [Ark UI documentation](https://ark-ui.com/docs/components/scroll-area#accessibility) for clarification.

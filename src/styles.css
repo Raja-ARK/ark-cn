@@ -189,11 +189,11 @@
 }
 
 [id] {
-  scroll-margin-top: 80px; /* Adjust this value to match your header height */
+  scroll-margin-top: 80px; 
 }
 
 @layer base {
-  /* Ark UI scroll-area: hide native scrollbar on the viewport (custom thumbs + JS thumb offset). */
+  /* Ark UI Scroll Area: hide native scrollbar on the viewport (custom thumbs + JS thumb offset). */
   [data-scope="scroll-area"][data-part="viewport"] {
     scrollbar-width: none;
   }
@@ -201,7 +201,7 @@
     display: none;
   }
 
-  /* Ark UI Toast — required runtime positioning & animation */
+  /* Ark UI Toast: required runtime positioning & animation */
   [data-scope="toast"][data-part="root"] {
     translate: var(--x) var(--y);
     scale: var(--scale);

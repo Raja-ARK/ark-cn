@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/components/ui/label.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ark } from \"@ark-ui/react/factory\";\r\nimport type { ComponentProps } from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport const Label = ({\r\n  className,\r\n  ...props\r\n}: ComponentProps<typeof ark.label>) => {\r\n  return (\r\n    <ark.label\r\n      className={cn(\r\n        \"inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4\",\r\n        className,\r\n      )}\r\n      {...props}\r\n    />\r\n  );\r\n};\r\n",
+      "content": "\"use client\";\n\nimport { ark } from \"@ark-ui/react/factory\";\nimport type { ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport const Label = ({\n  className,\n  ...props\n}: ComponentProps<typeof ark.label>) => {\n  return (\n    <ark.label\n      className={cn(\n        \"inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4\",\n        className,\n      )}\n      {...props}\n    />\n  );\n};\n",
       "type": "registry:ui",
       "target": "src/components/ui/label.tsx"
     }

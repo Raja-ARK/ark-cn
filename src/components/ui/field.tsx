@@ -2,7 +2,7 @@
 
 import { Field as FieldPrimitive } from "@ark-ui/react/field";
 import { cn } from "@/lib/utils";
-import { Input } from "./input";
+import { Input } from "@/components/ui/input";
 
 export const Field = ({ className, ...props }: FieldPrimitive.RootProps) => (
   <FieldPrimitive.Root

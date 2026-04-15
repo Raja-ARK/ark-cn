@@ -25,7 +25,7 @@ referenceLink: "https://ark-ui.com/docs/components/sidebar"
     <DocSteps>
       <DocStep>
         Install the dependency required by this primitive:
-        <PackageInstall pkg="@ark-ui/react" />
+        <PackageInstall pkg="@ark-ui/react lucide-react class-variance-authority" />
       </DocStep>
       <DocStep>
         Copy the component source into your app:
@@ -143,6 +143,12 @@ Use `SidebarProvider` with `open` and `onOpenChange` when an external control sh
 />
 
 ## API reference
+
+This component mirrors the upstream Ark UI primitive. All props and DOM behavior are defined by Ark unless you see an **ark-cn-only** row below.
+
+<ComponentDocSupplement component="sidebar" section="extension-props" />
+
+See the [ARK UI documentation](https://ark-ui.com/docs/components/sidebar) for the full API.
 
 This implementation is **Ark UI–based** but follows **shadcn/ui’s Sidebar API and composition** for props, context, and layout parts. For conceptual docs, props tables, and patterns (keyboard shortcut, `useSidebar`, theming, styling), use:
 

@@ -9,10 +9,124 @@
   "files": [
     {
       "path": "src/components/ui/swap.tsx",
-      "content": "\"use client\";\r\n\r\nimport { Swap as SwapPrimitive } from \"@ark-ui/react/swap\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport type SwapProps = SwapPrimitive.RootProps;\r\n\r\nexport const Swap = ({ className, ...props }: SwapProps) => (\r\n  <SwapPrimitive.Root data-slot=\"swap\" className={cn(className)} {...props} />\r\n);\r\n\r\nexport type SwapIndicatorProps = SwapPrimitive.IndicatorProps;\r\n\r\nexport const SwapIndicator = ({ className, ...props }: SwapIndicatorProps) => (\r\n  <SwapPrimitive.Indicator\r\n    data-slot=\"swap-indicator\"\r\n    className={cn(className)}\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport type SwapRootProviderProps = SwapPrimitive.RootProviderProps;\r\n\r\nexport const SwapRootProvider = ({\r\n  className,\r\n  ...props\r\n}: SwapRootProviderProps) => (\r\n  <SwapPrimitive.RootProvider\r\n    data-slot=\"swap-root-provider\"\r\n    className={cn(className)}\r\n    {...props}\r\n  />\r\n);\r\n\r\nexport type { UseSwapProps, UseSwapReturn } from \"@ark-ui/react/swap\";\r\nexport { useSwap, useSwapContext } from \"@ark-ui/react/swap\";\r\n",
+      "content": "\"use client\";\n\nimport { Swap as SwapPrimitive } from \"@ark-ui/react/swap\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport type SwapProps = SwapPrimitive.RootProps;\n\nexport const Swap = ({ className, ...props }: SwapProps) => (\n  <SwapPrimitive.Root data-slot=\"swap\" className={cn(className)} {...props} />\n);\n\nexport type SwapIndicatorProps = SwapPrimitive.IndicatorProps;\n\nexport const SwapIndicator = ({ className, ...props }: SwapIndicatorProps) => (\n  <SwapPrimitive.Indicator\n    data-slot=\"swap-indicator\"\n    className={cn(className)}\n    {...props}\n  />\n);\n\nexport type SwapRootProviderProps = SwapPrimitive.RootProviderProps;\n\nexport const SwapRootProvider = ({\n  className,\n  ...props\n}: SwapRootProviderProps) => (\n  <SwapPrimitive.RootProvider\n    data-slot=\"swap-root-provider\"\n    className={cn(className)}\n    {...props}\n  />\n);\n\nexport type { UseSwapProps, UseSwapReturn } from \"@ark-ui/react/swap\";\nexport { useSwap, useSwapContext } from \"@ark-ui/react/swap\";\n",
       "type": "registry:ui",
       "target": "src/components/ui/swap.tsx"
     }
   ],
+  "css": {
+    "@keyframes swap-fade-in": {
+      "from": {
+        "opacity": "0"
+      },
+      "to": {
+        "opacity": "1"
+      }
+    },
+    "@keyframes swap-fade-out": {
+      "from": {
+        "opacity": "1"
+      },
+      "to": {
+        "opacity": "0"
+      }
+    },
+    "@keyframes swap-rotate-in": {
+      "from": {
+        "transform": "rotate(-90deg)"
+      },
+      "to": {
+        "transform": "rotate(0deg)"
+      }
+    },
+    "@keyframes swap-rotate-out": {
+      "from": {
+        "transform": "rotate(0deg)"
+      },
+      "to": {
+        "transform": "rotate(90deg)"
+      }
+    },
+    "@keyframes swap-scale-in": {
+      "from": {
+        "transform": "scale(0)"
+      },
+      "to": {
+        "transform": "scale(1)"
+      }
+    },
+    "@keyframes swap-scale-out": {
+      "from": {
+        "transform": "scale(1)"
+      },
+      "to": {
+        "transform": "scale(0)"
+      }
+    },
+    "@keyframes swap-flip-in": {
+      "from": {
+        "transform": "rotateY(180deg)"
+      },
+      "to": {
+        "transform": "rotateY(0deg)"
+      }
+    },
+    "@keyframes swap-flip-out": {
+      "from": {
+        "transform": "rotateY(0deg)"
+      },
+      "to": {
+        "transform": "rotateY(180deg)"
+      }
+    },
+    "@keyframes swap-blur-in": {
+      "from": {
+        "filter": "blur(2px)"
+      },
+      "to": {
+        "filter": "blur(0)"
+      }
+    },
+    "@keyframes swap-blur-out": {
+      "from": {
+        "filter": "blur(0)"
+      },
+      "to": {
+        "filter": "blur(2px)"
+      }
+    },
+    ".swap-indicator-fade[data-state=\"open\"]": {
+      "animation": "swap-fade-in 200ms ease-out, swap-blur-in 200ms ease-out"
+    },
+    ".swap-indicator-fade[data-state=\"closed\"]": {
+      "animation": "swap-fade-out 100ms ease-in, swap-blur-out 100ms ease-in"
+    },
+    ".swap-indicator-flip": {
+      "backface-visibility": "hidden"
+    },
+    ".swap-indicator-flip[data-state=\"open\"]": {
+      "animation": "swap-flip-in 400ms ease, swap-blur-in 400ms ease"
+    },
+    ".swap-indicator-flip[data-state=\"closed\"]": {
+      "animation": "swap-flip-out 200ms ease, swap-blur-out 200ms ease"
+    },
+    ".swap-indicator-rotate[data-state=\"open\"]": {
+      "animation": "swap-rotate-in 250ms ease-out, swap-fade-in 250ms ease-out, swap-blur-in 250ms ease-out"
+    },
+    ".swap-indicator-rotate[data-state=\"closed\"]": {
+      "animation": "swap-rotate-out 100ms ease-in, swap-fade-out 100ms ease-in, swap-blur-out 100ms ease-in"
+    },
+    ".swap-indicator-scale[data-state=\"open\"]": {
+      "animation": "swap-scale-in 200ms ease-out, swap-fade-in 200ms ease-out, swap-blur-in 200ms ease-out"
+    },
+    ".swap-indicator-scale[data-state=\"closed\"]": {
+      "animation": "swap-scale-out 100ms ease-in, swap-fade-out 100ms ease-in, swap-blur-out 100ms ease-in"
+    },
+    "@media (prefers-reduced-motion: reduce)": {
+      ".swap-indicator-fade, .swap-indicator-flip, .swap-indicator-rotate, .swap-indicator-scale": {
+        "animation": "none !important"
+      }
+    }
+  },
   "type": "registry:ui"
 }

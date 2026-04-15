@@ -1,7 +1,7 @@
 "use client";
 
 import { ark } from "@ark-ui/react/factory";
-import { mergeProps } from "@zag-js/react";
+import { mergeProps } from "@ark-ui/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
 import {
@@ -18,22 +18,22 @@ import {
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
-import { Input, type InputProps } from "./input";
-import { Separator } from "./separator";
+import { Button } from "@/components/ui/button";
+import { Input, type InputProps } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "./sheet";
+} from "@/components/ui/sheet";
 import {
   Tooltip,
   TooltipContext,
   TooltipPopup,
   type TooltipPopupProps,
-} from "./tooltip";
+} from "@/components/ui/tooltip";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;

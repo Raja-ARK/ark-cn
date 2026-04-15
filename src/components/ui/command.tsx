@@ -3,7 +3,6 @@
 import type { CollectionItem } from "@ark-ui/react/combobox";
 import { Dialog } from "@ark-ui/react/dialog";
 import { Portal } from "@ark-ui/react/portal";
-import type { PositioningOptions } from "@zag-js/popper";
 import { SearchIcon } from "lucide-react";
 import type { ComponentProps } from "react";
 
@@ -23,14 +22,14 @@ import {
   ComboboxPopup,
   type ComboboxProps,
   ComboboxSeparator,
-} from "./combobox";
+} from "@/components/ui/combobox";
 
 /**
  * In-flow list: default Floating UI positioning takes the popup out of document
  * flow, so a sibling footer in a flex column can sit on top and steal pointer
  * events. This keeps the list in normal flow (dialog + standalone panel).
  */
-const commandInlinePositioning: PositioningOptions = {
+const commandInlinePositioning: ComboboxProps["positioning"] = {
   gutter: 0,
   listeners: false,
   placement: "bottom-start",

@@ -30,6 +30,52 @@ referenceLink: "https://ark-ui.com/docs/components/swap"
         <ComponentSource name="swap" title="components/ui/swap.tsx" />
       </DocStep>
       <DocStep>
+        Add the following CSS to your stylesheet (e.g. `styles.css`):
+
+        ```css
+        @keyframes swap-fade-in { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes swap-fade-out { from { opacity: 1; } to { opacity: 0; } }
+        @keyframes swap-rotate-in { from { transform: rotate(-90deg); } to { transform: rotate(0deg); } }
+        @keyframes swap-rotate-out { from { transform: rotate(0deg); } to { transform: rotate(90deg); } }
+        @keyframes swap-scale-in { from { transform: scale(0); } to { transform: scale(1); } }
+        @keyframes swap-scale-out { from { transform: scale(1); } to { transform: scale(0); } }
+        @keyframes swap-flip-in { from { transform: rotateY(180deg); } to { transform: rotateY(0deg); } }
+        @keyframes swap-flip-out { from { transform: rotateY(0deg); } to { transform: rotateY(180deg); } }
+        @keyframes swap-blur-in { from { filter: blur(2px); } to { filter: blur(0); } }
+        @keyframes swap-blur-out { from { filter: blur(0); } to { filter: blur(2px); } }
+        .swap-indicator-fade[data-state="open"] {
+          animation: swap-fade-in 200ms ease-out, swap-blur-in 200ms ease-out;
+        }
+        .swap-indicator-fade[data-state="closed"] {
+          animation: swap-fade-out 100ms ease-in, swap-blur-out 100ms ease-in;
+        }
+        .swap-indicator-flip { backface-visibility: hidden; }
+        .swap-indicator-flip[data-state="open"] {
+          animation: swap-flip-in 400ms ease, swap-blur-in 400ms ease;
+        }
+        .swap-indicator-flip[data-state="closed"] {
+          animation: swap-flip-out 200ms ease, swap-blur-out 200ms ease;
+        }
+        .swap-indicator-rotate[data-state="open"] {
+          animation: swap-rotate-in 250ms ease-out, swap-fade-in 250ms ease-out, swap-blur-in 250ms ease-out;
+        }
+        .swap-indicator-rotate[data-state="closed"] {
+          animation: swap-rotate-out 100ms ease-in, swap-fade-out 100ms ease-in, swap-blur-out 100ms ease-in;
+        }
+        .swap-indicator-scale[data-state="open"] {
+          animation: swap-scale-in 200ms ease-out, swap-fade-in 200ms ease-out, swap-blur-in 200ms ease-out;
+        }
+        .swap-indicator-scale[data-state="closed"] {
+          animation: swap-scale-out 100ms ease-in, swap-fade-out 100ms ease-in, swap-blur-out 100ms ease-in;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .swap-indicator-fade, .swap-indicator-flip, .swap-indicator-rotate, .swap-indicator-scale {
+            animation: none !important;
+          }
+        }
+        ```
+      </DocStep>
+      <DocStep>
         Update import aliases to match your project setup.
       </DocStep>
     </DocSteps>
@@ -72,7 +118,3 @@ Read exported parts in `src/components/ui/swap.tsx` and compose the primitive ac
 This component mirrors the upstream Ark UI primitive.
 
 See the [ARK UI documentation](https://ark-ui.com/docs/components/swap) for the full API.
-
-## Accessibility
-
-See the [Ark UI documentation](https://ark-ui.com/docs/components/swap#accessibility) for clarification.

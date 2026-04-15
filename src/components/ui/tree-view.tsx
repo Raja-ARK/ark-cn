@@ -14,7 +14,6 @@ import {
   PlusIcon,
   TrashIcon,
 } from "lucide-react";
-import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -43,17 +42,15 @@ export const TreeViewLabel = ({ className, ...props }: TreeViewLabelProps) => (
 
 export type TreeViewTreeProps = TreeViewPrimitive.TreeProps;
 
-export const TreeViewTree = forwardRef<HTMLDivElement, TreeViewTreeProps>(
-  ({ className, ...props }, ref) => (
+export const TreeViewTree = 
+  ({ className, ...props }: TreeViewTreeProps) => (
     <TreeViewPrimitive.Tree
       className={cn("flex flex-col", className)}
       data-slot="tree-view-tree"
-      ref={ref}
       {...props}
     />
-  ),
-);
-TreeViewTree.displayName = "TreeViewTree";
+  );
+
 
 export const TreeViewBranch = ({
   className,

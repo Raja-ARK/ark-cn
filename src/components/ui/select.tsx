@@ -24,8 +24,8 @@ import {
   useMemo,
 } from "react";
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "./button";
-import { ButtonGroup } from "./button-group";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
 
 export type {
   CollectionItem,

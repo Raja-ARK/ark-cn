@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/components/ui/separator.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ark } from \"@ark-ui/react/factory\";\r\nimport type { ComponentProps } from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport const Separator = ({\r\n  className,\r\n  orientation = \"horizontal\",\r\n  ...props\r\n}: ComponentProps<typeof ark.div> & {\r\n  orientation?: \"horizontal\" | \"vertical\";\r\n}) => {\r\n  return (\r\n    <ark.div\r\n      className={cn(\r\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\r\n        className,\r\n      )}\r\n      data-slot=\"separator\"\r\n      data-orientation={orientation}\r\n      {...props}\r\n    />\r\n  );\r\n};\r\n",
+      "content": "\"use client\";\n\nimport { ark } from \"@ark-ui/react/factory\";\nimport type { ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport const Separator = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: ComponentProps<typeof ark.div> & {\n  orientation?: \"horizontal\" | \"vertical\";\n}) => {\n  return (\n    <ark.div\n      className={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n        className,\n      )}\n      data-slot=\"separator\"\n      data-orientation={orientation}\n      {...props}\n    />\n  );\n};\n",
       "type": "registry:ui",
       "target": "src/components/ui/separator.tsx"
     }

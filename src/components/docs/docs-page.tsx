@@ -9,7 +9,7 @@ import { DocStep, DocSteps } from "@/components/docs/doc-install-steps";
 import { DataAttributesTable } from "@/components/docs/docs-data-attributes-table";
 import { KeyboardShortcutsTable } from "@/components/docs/docs-keyboard-shortcuts-table";
 import { DocPropsTable } from "@/components/docs/docs-props-table";
-import { AccordionDocSupplement } from "@/components/docs/presets/accordion-doc-supplement";
+import { ComponentDocSupplement } from "@/components/docs/presets/component-doc-supplement";
 import PackageInstall from "@/components/package-install";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { type DocsHeading, getDocURl } from "@/lib/docs";
@@ -133,7 +133,7 @@ const DocsPage = ({
             DataAttributesTable,
             DocPropsTable,
             ComponentsNavigation,
-            AccordionDocSupplement,
+            ComponentDocSupplement,
           }}
         />
       </div>

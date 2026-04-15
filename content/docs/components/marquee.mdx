@@ -30,6 +30,69 @@ referenceLink: "https://ark-ui.com/docs/components/marquee"
         <ComponentSource name="marquee" title="components/ui/marquee.tsx" />
       </DocStep>
       <DocStep>
+        Add the following CSS to your stylesheet (e.g. `styles.css`):
+
+        ```css
+        @keyframes marquee-x {
+          from { transform: translateX(0); }
+          to { transform: translateX(var(--marquee-translate)); }
+        }
+        @keyframes marquee-y {
+          from { transform: translateY(0); }
+          to { transform: translateY(var(--marquee-translate)); }
+        }
+        [data-slot="marquee-root"][data-paused] *,
+        [data-slot="marquee-root"][data-paused] {
+          animation-play-state: paused !important;
+        }
+        [data-slot="marquee-content"] {
+          animation-timing-function: linear;
+          animation-duration: var(--marquee-duration);
+          animation-delay: var(--marquee-delay);
+          animation-iteration-count: var(--marquee-loop-count);
+        }
+        [data-slot="marquee-content"][data-side="start"],
+        [data-slot="marquee-content"][data-side="end"] {
+          animation-name: marquee-x;
+        }
+        [data-slot="marquee-content"][data-side="top"],
+        [data-slot="marquee-content"][data-side="bottom"] {
+          animation-name: marquee-y;
+        }
+        [data-slot="marquee-content"][data-reverse] {
+          animation-direction: reverse;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [data-slot="marquee-content"] {
+            animation: none !important;
+          }
+        }
+        [data-slot="marquee-edge"] {
+          z-index: 10;
+        }
+        [data-slot="marquee-edge"][data-orientation="horizontal"][data-side="start"] {
+          background: linear-gradient(to right, var(--background), transparent);
+        }
+        [dir="rtl"] [data-slot="marquee-edge"][data-orientation="horizontal"][data-side="start"] {
+          background: linear-gradient(to left, var(--background), transparent);
+        }
+        [data-slot="marquee-edge"][data-orientation="horizontal"][data-side="end"] {
+          background: linear-gradient(to left, var(--background), transparent);
+        }
+        [dir="rtl"] [data-slot="marquee-edge"][data-orientation="horizontal"][data-side="end"] {
+          background: linear-gradient(to right, var(--background), transparent);
+        }
+        [data-slot="marquee-edge"][data-orientation="vertical"][data-side="top"] {
+          height: 20%;
+          background: linear-gradient(to bottom, var(--background), transparent);
+        }
+        [data-slot="marquee-edge"][data-orientation="vertical"][data-side="bottom"] {
+          height: 20%;
+          background: linear-gradient(to top, var(--background), transparent);
+        }
+        ```
+      </DocStep>
+      <DocStep>
         Update import aliases to match your project setup.
       </DocStep>
     </DocSteps>
@@ -95,7 +158,3 @@ Read exported parts in `src/components/ui/marquee.tsx` and compose the primitive
 This component mirrors the upstream Ark UI primitive.
 
 See the [ARK UI documentation](https://ark-ui.com/docs/components/marquee) for the full API.
-
-## Accessibility
-
-See the [Ark UI documentation](https://ark-ui.com/docs/components/marquee#accessibility) for clarification.

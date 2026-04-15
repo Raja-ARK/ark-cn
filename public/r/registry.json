@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "ark-cn",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://ark-cn.vercel.app",
   "items": [
     {
       "name": "accordion",

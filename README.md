@@ -76,7 +76,7 @@ bun install
 bun run dev
 ```
 
-The site runs at `http://localhost:3000`.
+The site runs at `https://ark-cn.vercel.app`.
 
 ---
 

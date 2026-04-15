@@ -15,8 +15,8 @@
       "target": "src/components/ui/button.tsx"
     }
   ],
-  "css": {
-    "@theme inline": {
+  "cssVars": {
+    "theme": {
       "--color-destructive-foreground": "var(--destructive-foreground)",
       "--color-info": "var(--info)",
       "--color-info-foreground": "var(--info-foreground)",
@@ -25,7 +25,7 @@
       "--color-warning": "var(--warning)",
       "--color-warning-foreground": "var(--warning-foreground)"
     },
-    ":root": {
+    "light": {
       "--destructive-foreground": "var(--color-red-400)",
       "--info": "var(--color-blue-500)",
       "--info-foreground": "var(--color-blue-700)",
@@ -34,7 +34,7 @@
       "--warning": "var(--color-amber-500)",
       "--warning-foreground": "var(--color-amber-700)"
     },
-    ".dark": {
+    "dark": {
       "--destructive-foreground": "var(--color-red-400)",
       "--info": "var(--color-blue-500)",
       "--info-foreground": "var(--color-blue-400)",

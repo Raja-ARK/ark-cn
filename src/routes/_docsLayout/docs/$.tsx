@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { allDocs } from "content-collections";
 import DocsPage from "@/components/docs/docs-page";
+import { getOrderedDocs } from "@/lib/docs-navigation";
 
 export type DocSection = (typeof allDocs)[number];
 
@@ -31,7 +32,7 @@ export const Route = createFileRoute("/_docsLayout/docs/$")({
       throw notFound();
     }
 
-    const ordered = allDocs.sort((a, b) => a.id - b.id);
+    const ordered = getOrderedDocs();
     const index = ordered.findIndex((doc) => doc.url === path);
 
     const previousPage = index > 0 ? ordered[index - 1]! : null;

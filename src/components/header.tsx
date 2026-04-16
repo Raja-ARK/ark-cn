@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
@@ -14,10 +14,14 @@ const Header = ({
   containerClassName?: string;
   mobileMenu?: React.ReactNode;
 }) => {
+  const location = useLocation();
+  const isLandingPage = location.pathname === "/";
+
   return (
     <header
       className={cn(
         "sticky top-0 bg-background/5 z-10 backdrop-blur-md h-(--header-height)",
+        isLandingPage && "bg-background/10",
         className,
       )}
     >
@@ -27,10 +31,19 @@ const Header = ({
           containerClassName,
         )}
       >
-        <div className="flex items-center">
+        <div
+          className={cn(
+            "flex items-center",
+            isLandingPage && "gap-3",
+          )}
+        >
           <Link
             to="/"
-            className={buttonVariants({ variant: "ghost", size: "icon" })}
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon" }),
+              isLandingPage &&
+                "rounded-full border border-transparent bg-background/36 shadow-sm backdrop-blur-md transition-[background-color,border-color,box-shadow] hover:border-border/70 hover:bg-background/72 hover:shadow-md",
+            )}
           >
             <svg
               viewBox="0 0 256 256"
@@ -68,14 +81,26 @@ const Header = ({
             </svg>
           </Link>
           {mobileMenu}
-          <MainNav items={siteConfig.navItems} />
+          <MainNav
+            items={siteConfig.navItems}
+            variant={isLandingPage ? "landing" : "default"}
+          />
         </div>
-        <div className="flex items-center gap-2">
+        <div
+          className={cn(
+            "flex items-center gap-2",
+            isLandingPage && "rounded-full border border-border/60 bg-background/72 p-1 shadow-sm backdrop-blur-xl",
+          )}
+        >
           <a
             href="https://github.com/RajaARK99/ark-cn"
             target="_blank"
             rel="noreferrer"
-            className={buttonVariants({ variant: "outline", size: "sm" })}
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon" }),
+              isLandingPage &&
+                "rounded-full border border-transparent bg-transparent hover:border-border/70 hover:bg-background/88 hover:shadow-xs",
+            )}
             aria-label="Open ark-cn GitHub repository"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4">
@@ -85,7 +110,12 @@ const Header = ({
               />
             </svg>
           </a>
-          <ToggleTheme />
+          <ToggleTheme
+            className={cn(
+              isLandingPage &&
+                "rounded-full border border-transparent bg-transparent hover:border-border/70 hover:bg-background/88 hover:shadow-xs",
+            )}
+          />
         </div>
       </div>
     </header>

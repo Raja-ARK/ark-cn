@@ -9,7 +9,7 @@ import { DocStep, DocSteps } from "@/components/docs/doc-install-steps";
 import { DataAttributesTable } from "@/components/docs/docs-data-attributes-table";
 import { KeyboardShortcutsTable } from "@/components/docs/docs-keyboard-shortcuts-table";
 import { DocPropsTable } from "@/components/docs/docs-props-table";
-import { ComponentDocSupplement } from "@/components/docs/presets/component-doc-supplement";
+import { ComponentDocSupplement } from "@/components/docs/component-doc-supplement";
 import PackageInstall from "@/components/package-install";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { type DocsHeading, getDocURl } from "@/lib/docs";
@@ -63,7 +63,7 @@ const DocsPage = ({
           <h1 className="min-w-0 flex-1 text-3xl font-semibold tracking-tight sm:text-3xl">
             {title}
           </h1>
-          <div className="flex shrink-0 items-center gap-2">
+          <div className="shrink-0 items-center gap-2 hidden md:flex">
             {referenceLink && (
               <a
                 href={referenceLink}

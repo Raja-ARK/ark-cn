@@ -1,30 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { allDocs } from "content-collections";
 import { getDocURl } from "@/lib/docs";
+import { getComponentDocGroups } from "@/lib/docs-navigation";
 import { buttonVariants } from "../ui/button";
 
-type ComponentNavItem = {
-  title: string;
-  docsPath: string;
-};
-
-const getComponentNavItems = (): ComponentNavItem[] => {
-  return allDocs
-    .filter((doc) => doc.url.startsWith("/components/"))
-    .map((doc) => {
-      const docsPath = getDocURl(doc.url);
-      return {
-        title: doc.title,
-        docsPath: docsPath ?? "/docs",
-      };
-    })
-    .sort((a, b) => a.title.localeCompare(b.title));
-};
-
 export const ComponentsNavigation = () => {
-  const items = getComponentNavItems();
+  const groups = getComponentDocGroups();
 
-  if (items.length === 0) {
+  if (groups.length === 0) {
     return (
       <p className="text-sm text-muted-foreground">
         No component docs found yet.
@@ -33,16 +15,38 @@ export const ComponentsNavigation = () => {
   }
 
   return (
-    <div className="not-prose grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((item) => (
-        <Link
-          key={item.docsPath}
-          to={item.docsPath}
-          params={{ _splat: item.docsPath }}
-          className={buttonVariants({ variant: "link", className: "justify-start" })}
-        >
-          <p className="font-medium leading-tight">{item.title}</p>
-        </Link>
+    <div className="not-prose space-y-8">
+      {groups.map((group) => (
+        <section key={group.key} className="space-y-3">
+          <div className="space-y-1">
+            <h2 className="text-lg font-semibold tracking-tight">
+              {group.title}
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              {group.items.length} component
+              {group.items.length === 1 ? "" : "s"}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {group.items.map((item) => {
+              const docsPath = getDocURl(item.url) ?? "/docs";
+
+              return (
+                <Link
+                  key={docsPath}
+                  to={docsPath}
+                  params={{ _splat: docsPath }}
+                  className={buttonVariants({
+                    variant: "link",
+                    className: "h-auto justify-start px-0 text-left",
+                  })}
+                >
+                  <p className="font-medium leading-tight">{item.title}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
       ))}
     </div>
   );

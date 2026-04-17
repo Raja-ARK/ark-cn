@@ -1,5 +1,3 @@
-"use client";
-
 import { Switch, SwitchLabel, SwitchRoot } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 

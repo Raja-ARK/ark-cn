@@ -1,5 +1,3 @@
-"use client";
-
 import { TagsInput, TagsInputScaffold } from "@/components/ui/tags-input";
 
 const VALID_TAG_PATTERN = /^[a-zA-Z0-9-]+$/;

@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo, useState } from "react";
 import { DocsShikiCode } from "@/components/docs/docs-shiki-code";
 import { buttonVariants } from "@/components/ui/button";

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "highlight",
+  "title": "Highlight",
+  "description": "A shadcn-style text highlight utility built with Ark UI primitives.",
+  "dependencies": ["@ark-ui/react"],
+  "files": [
+    {
+      "path": "src/components/ui/highlight.tsx",
+      "content": "\"use client\";\n\nimport {\n  Highlight as HighlightPrimitive,\n  type HighlightChunk,\n  type HighlightProps as HighlightPrimitiveProps,\n  type UseHighlightProps,\n  useHighlight,\n} from \"@ark-ui/react/highlight\";\nimport { cn } from \"@/lib/utils\";\n\nexport type HighlightProps = HighlightPrimitiveProps;\n\nexport const Highlight = ({ className, ...props }: HighlightProps) => (\n  <HighlightPrimitive\n    className={cn(\n      \"rounded-sm bg-warning/15 px-0.5 text-foreground dark:bg-warning/20\",\n      className,\n    )}\n    data-slot=\"highlight\"\n    {...props}\n  />\n);\n\nexport { useHighlight };\nexport type { HighlightChunk, UseHighlightProps };\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/highlight.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

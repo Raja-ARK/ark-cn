@@ -1,5 +1,3 @@
-"use client";
-
 import { Slider, SliderField } from "@/components/ui/slider";
 
 const SliderVerticalTwoRanges = () => (

@@ -3,9 +3,7 @@
   "name": "splitter",
   "title": "Splitter",
   "description": "A shadcn-style splitter component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/splitter.tsx",

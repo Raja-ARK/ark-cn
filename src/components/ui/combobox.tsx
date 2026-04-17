@@ -20,9 +20,13 @@ import {
   useEffect,
   useMemo,
 } from "react";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import { cn } from "@/lib/utils";
 
 /** Default item shape when you omit an explicit generic on list helpers. */
 export type DefaultComboboxItem = { label: string; value: string };

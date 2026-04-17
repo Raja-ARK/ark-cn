@@ -106,7 +106,7 @@ export const DialogPopup = ({
             <DialogPrimitive.CloseTrigger
               aria-label="Close"
               className={cn(
-                "cursor-pointer absolute top-4 right-4 z-10 inline-flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
+                "absolute top-4 inset-e-4 z-10 inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-md text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
                 closeClassName,
               )}
               {...closeRest}
@@ -126,7 +126,7 @@ export const DialogHeader = ({
   ...props
 }: ComponentProps<typeof ark.div>) => (
   <ark.div
-    className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
+    className={cn("flex flex-col gap-2 text-center sm:text-start", className)}
     data-slot="dialog-header"
     {...props}
   />

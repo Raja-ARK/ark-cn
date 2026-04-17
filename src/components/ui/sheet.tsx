@@ -138,7 +138,7 @@ export const SheetPopup = ({
             <SheetPrimitive.CloseTrigger
               aria-label="Close"
               className={cn(
-                "absolute top-3 right-3 z-10 inline-flex size-8 cursor-pointer items-center justify-center rounded-md text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
+                "absolute top-3 inset-e-3 z-10 inline-flex size-8 cursor-pointer items-center justify-center rounded-md text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
                 closeClassName,
               )}
               {...closeRest}
@@ -161,7 +161,7 @@ export const SheetHeader = ({
 }: ComponentProps<typeof ark.div>) => (
   <ark.div
     className={cn(
-      "flex shrink-0 flex-col gap-1.5 border-border border-b px-6 pt-6 pb-4 text-left",
+      "flex shrink-0 flex-col gap-1.5 border-border border-b px-6 pt-6 pb-4 text-start",
       className,
     )}
     data-slot="sheet-header"

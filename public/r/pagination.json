@@ -3,13 +3,8 @@
   "name": "pagination",
   "title": "Pagination",
   "description": "A shadcn-style pagination component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "button"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "src/components/ui/pagination.tsx",

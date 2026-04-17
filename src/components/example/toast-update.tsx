@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { toaster } from "@/components/ui/toast";

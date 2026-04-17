@@ -1,5 +1,3 @@
-"use client";
-
 import { Field, FieldInput, FieldLabel } from "@/components/ui/field";
 import { Fieldset, FieldsetLegend } from "@/components/ui/fieldset";
 

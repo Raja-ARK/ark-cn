@@ -1,5 +1,3 @@
-"use client";
-
 import { DotIcon } from "lucide-react";
 import {
   Breadcrumb,

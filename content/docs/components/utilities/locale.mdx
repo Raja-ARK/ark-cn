@@ -1,0 +1,55 @@
+---
+id: 76
+title: "Locale Provider"
+description: "A shadcn-style locale provider utility built with Ark UI primitives."
+url: "/components/locale"
+referenceLink: "https://ark-ui.com/docs/utilities/locale"
+---
+
+
+<ComponentPreview name="locale-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <PackageInstall pkg="@ark-cn/locale" shadcn />
+  </TabsContent>
+  <TabsContent value="manual">
+    <DocSteps>
+      <DocStep>
+        Install the dependency required by this utility:
+        <PackageInstall pkg="@ark-ui/react" />
+      </DocStep>
+      <DocStep>
+        Copy the utility source into your app:
+        <ComponentSource name="locale" title="components/ui/locale.tsx" />
+      </DocStep>
+      <DocStep>
+        Update import aliases to match your project setup.
+      </DocStep>
+    </DocSteps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { LocaleProvider, useLocaleContext } from "@/components/ui/locale"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="locale-demo" />
+
+## API reference
+This utility mirrors Ark UI's locale provider and locale hooks. Use it together with explicit `dir="ltr"` or `dir="rtl"` containers when you need layout direction as well as locale-aware formatting.
+
+See the [ARK UI documentation](https://ark-ui.com/docs/utilities/locale) for the full API.
+

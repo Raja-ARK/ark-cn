@@ -8,9 +8,13 @@ import {
   PlusIcon,
 } from "lucide-react";
 import type { ComponentProps, ReactNode } from "react";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import { cn } from "@/lib/utils";
 
 export type NumberFieldRootProps = NumberFieldPrimitive.RootProps;
 

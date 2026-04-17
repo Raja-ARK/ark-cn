@@ -3,9 +3,7 @@
   "name": "swap",
   "title": "Swap",
   "description": "A shadcn-style swap component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/swap.tsx",

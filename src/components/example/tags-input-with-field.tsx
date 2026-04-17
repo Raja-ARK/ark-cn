@@ -1,5 +1,3 @@
-"use client";
-
 import { Field, FieldDescription, FieldError } from "@/components/ui/field";
 import { TagsInput, TagsInputScaffold } from "@/components/ui/tags-input";
 

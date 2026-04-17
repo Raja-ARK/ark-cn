@@ -1,5 +1,3 @@
-"use client";
-
 import {
   FlipHorizontalIcon,
   RefreshCwIcon,

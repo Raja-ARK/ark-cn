@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { TagsInput, TagsInputScaffold } from "@/components/ui/tags-input";
 

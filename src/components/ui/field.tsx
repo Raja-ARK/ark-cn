@@ -1,8 +1,8 @@
 "use client";
 
 import { Field as FieldPrimitive } from "@ark-ui/react/field";
-import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 export const Field = ({ className, ...props }: FieldPrimitive.RootProps) => (
   <FieldPrimitive.Root

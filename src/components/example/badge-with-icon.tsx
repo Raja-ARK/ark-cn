@@ -1,5 +1,3 @@
-"use client";
-
 import { CheckCircle2Icon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 

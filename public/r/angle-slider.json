@@ -3,10 +3,7 @@
   "name": "angle-slider",
   "title": "Angle Slider",
   "description": "A shadcn-style angle slider component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
   "files": [
     {
       "path": "src/components/ui/angle-slider.tsx",

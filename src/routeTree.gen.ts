@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ThemeRouteImport } from './routes/theme'
 import { Route as DocsLayoutRouteImport } from './routes/_docsLayout'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DocsLayoutDocsSplatRouteImport } from './routes/_docsLayout/docs/$'
 
+const ThemeRoute = ThemeRouteImport.update({
+  id: '/theme',
+  path: '/theme',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsLayoutRoute = DocsLayoutRouteImport.update({
   id: '/_docsLayout',
   getParentRoute: () => rootRouteImport,
@@ -30,33 +36,44 @@ const DocsLayoutDocsSplatRoute = DocsLayoutDocsSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/theme': typeof ThemeRoute
   '/docs/$': typeof DocsLayoutDocsSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/theme': typeof ThemeRoute
   '/docs/$': typeof DocsLayoutDocsSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_docsLayout': typeof DocsLayoutRouteWithChildren
+  '/theme': typeof ThemeRoute
   '/_docsLayout/docs/$': typeof DocsLayoutDocsSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/docs/$'
+  fullPaths: '/' | '/theme' | '/docs/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/docs/$'
-  id: '__root__' | '/' | '/_docsLayout' | '/_docsLayout/docs/$'
+  to: '/' | '/theme' | '/docs/$'
+  id: '__root__' | '/' | '/_docsLayout' | '/theme' | '/_docsLayout/docs/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DocsLayoutRoute: typeof DocsLayoutRouteWithChildren
+  ThemeRoute: typeof ThemeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/theme': {
+      id: '/theme'
+      path: '/theme'
+      fullPath: '/theme'
+      preLoaderRoute: typeof ThemeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_docsLayout': {
       id: '/_docsLayout'
       path: ''
@@ -96,6 +113,7 @@ const DocsLayoutRouteWithChildren = DocsLayoutRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DocsLayoutRoute: DocsLayoutRouteWithChildren,
+  ThemeRoute: ThemeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

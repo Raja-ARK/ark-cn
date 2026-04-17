@@ -3,9 +3,7 @@
   "name": "popover",
   "title": "Popover",
   "description": "A shadcn-style popover component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/popover.tsx",

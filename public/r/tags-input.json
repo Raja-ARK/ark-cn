@@ -3,10 +3,7 @@
   "name": "tags-input",
   "title": "Tags Input",
   "description": "A shadcn-style tags input component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@ark-ui/react", "lucide-react"],
   "files": [
     {
       "path": "src/components/ui/tags-input.tsx",

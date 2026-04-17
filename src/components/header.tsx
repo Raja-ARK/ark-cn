@@ -20,23 +20,18 @@ const Header = ({
   return (
     <header
       className={cn(
-        "sticky top-0 bg-background/5 z-10 backdrop-blur-md h-(--header-height)",
+        "sticky top-0 bg-background/5 z-10 backdrop-blur-md h-(--header-height) flex items-center",
         isLandingPage && "bg-background/10",
         className,
       )}
     >
       <div
         className={cn(
-          "max-w-400  mx-auto md:px-4 p-4 flex items-center justify-between",
+          "max-w-400  mx-auto w-full h-full flex items-center justify-between px-4",
           containerClassName,
         )}
       >
-        <div
-          className={cn(
-            "flex items-center",
-            isLandingPage && "gap-3",
-          )}
-        >
+        <div className={cn("flex items-center", isLandingPage && "gap-3")}>
           <Link
             to="/"
             className={cn(
@@ -89,7 +84,8 @@ const Header = ({
         <div
           className={cn(
             "flex items-center gap-2",
-            isLandingPage && "rounded-full border border-border/60 bg-background/72 p-1 shadow-sm backdrop-blur-xl",
+            isLandingPage &&
+              "rounded-full border border-border/60 bg-background/72 p-1 shadow-sm backdrop-blur-xl",
           )}
         >
           <a
@@ -97,7 +93,7 @@ const Header = ({
             target="_blank"
             rel="noreferrer"
             className={cn(
-              buttonVariants({ variant: "ghost", size: "icon" }),
+              buttonVariants({ variant: "ghost", size: "icon-sm" }),
               isLandingPage &&
                 "rounded-full border border-transparent bg-transparent hover:border-border/70 hover:bg-background/88 hover:shadow-xs",
             )}

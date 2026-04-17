@@ -1,5 +1,3 @@
-"use client";
-
 import { DatePicker, DatePickerCalendar } from "@/components/ui/date-picker";
 
 const DatePickerCalendarDemo = () => (

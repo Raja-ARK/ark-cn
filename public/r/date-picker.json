@@ -9,12 +9,7 @@
     "class-variance-authority",
     "@internationalized/date"
   ],
-  "registryDependencies": [
-    "button",
-    "button-group",
-    "input",
-    "input-group"
-  ],
+  "registryDependencies": ["button", "button-group", "input", "input-group"],
   "files": [
     {
       "path": "src/components/ui/date-picker.tsx",

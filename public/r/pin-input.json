@@ -3,12 +3,8 @@
   "name": "pin-input",
   "title": "Pin Input",
   "description": "A shadcn-style pin input component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
-  "registryDependencies": [
-    "button-group"
-  ],
+  "dependencies": ["@ark-ui/react"],
+  "registryDependencies": ["button-group"],
   "files": [
     {
       "path": "src/components/ui/pin-input.tsx",

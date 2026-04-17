@@ -1,5 +1,3 @@
-"use client";
-
 import { ShieldAlertIcon } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 

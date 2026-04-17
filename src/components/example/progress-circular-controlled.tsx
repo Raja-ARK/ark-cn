@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 
 import { ProgressCircular } from "@/components/ui/progress-circular";

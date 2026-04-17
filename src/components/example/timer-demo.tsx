@@ -1,5 +1,3 @@
-"use client";
-
 import { PauseIcon, PlayIcon, RotateCcwIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {

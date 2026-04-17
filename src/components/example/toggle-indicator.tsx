@@ -1,5 +1,3 @@
-"use client";
-
 import { HeartIcon } from "lucide-react";
 import { Toggle, ToggleIndicator } from "@/components/ui/toggle";
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { AngleSlider } from "@/components/ui/angle-slider";
 

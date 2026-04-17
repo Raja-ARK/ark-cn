@@ -16,5 +16,9 @@ export const siteConfig = {
     //   href: "/blocks",
     //   label: "Blocks",
     // },
+    {
+      href: "/theme",
+      label: "Theme",
+    },
   ],
 };

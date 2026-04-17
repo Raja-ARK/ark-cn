@@ -1,0 +1,55 @@
+---
+id: 72
+title: "Format Byte"
+description: "A shadcn-style byte formatting utility built with Ark UI primitives."
+url: "/components/format-byte"
+referenceLink: "https://ark-ui.com/docs/utilities/format-byte"
+---
+
+
+<ComponentPreview name="format-byte-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <PackageInstall pkg="@ark-cn/format" shadcn />
+  </TabsContent>
+  <TabsContent value="manual">
+    <DocSteps>
+      <DocStep>
+        Install the dependency required by this utility:
+        <PackageInstall pkg="@ark-ui/react" />
+      </DocStep>
+      <DocStep>
+        Copy the shared formatter source into your app:
+        <ComponentSource name="format" title="components/ui/format.tsx" />
+      </DocStep>
+      <DocStep>
+        Update import aliases to match your project setup.
+      </DocStep>
+    </DocSteps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { FormatByte } from "@/components/ui/format"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="format-byte-demo" />
+
+## API reference
+This utility mirrors Ark UI's byte formatter. The ark-cn file exports it both as `FormatByte` and as `Format.Byte`.
+
+See the [ARK UI documentation](https://ark-ui.com/docs/utilities/format-byte) for the full API.
+

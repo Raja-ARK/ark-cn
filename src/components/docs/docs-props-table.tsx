@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 
 /** One row for ark-cn-only or extended props (not generated from Ark types). */

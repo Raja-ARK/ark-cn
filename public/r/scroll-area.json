@@ -3,9 +3,7 @@
   "name": "scroll-area",
   "title": "Scroll Area",
   "description": "A shadcn-style scroll area component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/scroll-area.tsx",

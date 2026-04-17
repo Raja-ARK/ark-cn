@@ -1,5 +1,3 @@
-"use client";
-
 import { Slider, SliderField, SliderLabel } from "@/components/ui/slider";
 
 const SliderMinMax = () => (

@@ -1,5 +1,3 @@
-"use client";
-
 import { InfoIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 

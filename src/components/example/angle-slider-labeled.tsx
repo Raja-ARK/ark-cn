@@ -1,5 +1,3 @@
-"use client";
-
 import { AngleSlider } from "@/components/ui/angle-slider";
 
 const AngleSliderLabeled = () => (

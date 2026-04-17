@@ -1,15 +1,13 @@
 "use client";
 
 import type { ComponentProps } from "react";
-
-import { cn } from "@/lib/utils";
-
 import {
   ImageCropper,
   ImageCropperImage,
   ImageCropperSelection,
   ImageCropperViewport,
 } from "@/components/ui/image-cropper";
+import { cn } from "@/lib/utils";
 
 export type ZoomImageProps = Omit<
   ComponentProps<typeof ImageCropper>,

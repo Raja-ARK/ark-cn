@@ -1,0 +1,55 @@
+---
+id: 75
+title: "Highlight"
+description: "A shadcn-style text highlighting utility built with Ark UI primitives."
+url: "/components/highlight"
+referenceLink: "https://ark-ui.com/docs/utilities/highlight"
+---
+
+
+<ComponentPreview name="highlight-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <PackageInstall pkg="@ark-cn/highlight" shadcn />
+  </TabsContent>
+  <TabsContent value="manual">
+    <DocSteps>
+      <DocStep>
+        Install the dependency required by this utility:
+        <PackageInstall pkg="@ark-ui/react" />
+      </DocStep>
+      <DocStep>
+        Copy the utility source into your app:
+        <ComponentSource name="highlight" title="components/ui/highlight.tsx" />
+      </DocStep>
+      <DocStep>
+        Update import aliases to match your project setup.
+      </DocStep>
+    </DocSteps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { Highlight } from "@/components/ui/highlight"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="highlight-demo" />
+
+## API reference
+This utility mirrors Ark UI's `Highlight` and applies a lightweight default mark style so highlighted matches remain visible in docs and app surfaces.
+
+See the [ARK UI documentation](https://ark-ui.com/docs/utilities/highlight) for the full API.
+

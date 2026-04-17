@@ -105,7 +105,7 @@ export const ToastCloseTrigger = ({
 }: ToastCloseTriggerProps) => (
   <ToastPrimitive.CloseTrigger
     className={cn(
-      "absolute top-2 right-2 cursor-pointer rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring group-hover:opacity-100",
+      "absolute top-2 inset-e-2 cursor-pointer rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring group-hover:opacity-100",
       className,
     )}
     data-slot="toast-close"
@@ -152,7 +152,7 @@ export const ToastProvider = ({ className, ...props }: ToasterProps) => (
     <Toaster
       toaster={toaster}
       className={cn(
-        "fixed! z-100 flex max-h-screen w-full flex-col-reverse p-4 sm:top-auto sm:right-0 sm:bottom-0 sm:flex-col md:max-w-105",
+        "fixed! z-100 flex max-h-screen w-full flex-col-reverse p-4 sm:top-auto sm:inset-e-0 sm:bottom-0 sm:flex-col md:max-w-105",
         className,
       )}
       data-slot="toast-provider"

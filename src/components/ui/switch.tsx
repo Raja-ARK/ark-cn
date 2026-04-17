@@ -52,7 +52,7 @@ export const SwitchThumb = ({ className, ...props }: SwitchThumbProps) => (
     data-slot="switch-thumb"
     className={cn(
       "pointer-events-none block size-5 rounded-full bg-background shadow-sm ring-1 ring-border/30 transition-transform",
-      "data-[state=checked]:translate-x-4",
+      "data-[state=checked]:translate-x-4 rtl:data-[state=checked]:-translate-x-4",
       className,
     )}
     {...props}

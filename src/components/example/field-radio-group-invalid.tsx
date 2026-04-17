@@ -1,5 +1,3 @@
-"use client";
-
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { Radio, RadioGroup } from "@/components/ui/radio-group";
 

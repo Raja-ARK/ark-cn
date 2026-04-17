@@ -189,7 +189,7 @@
 }
 
 [id] {
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 @layer base {
@@ -323,18 +323,8 @@
   background: linear-gradient(to right, var(--background), transparent);
 }
 
-[dir="rtl"]
-  [data-slot="marquee-edge"][data-orientation="horizontal"][data-side="start"] {
-  background: linear-gradient(to left, var(--background), transparent);
-}
-
 [data-slot="marquee-edge"][data-orientation="horizontal"][data-side="end"] {
   background: linear-gradient(to left, var(--background), transparent);
-}
-
-[dir="rtl"]
-  [data-slot="marquee-edge"][data-orientation="horizontal"][data-side="end"] {
-  background: linear-gradient(to right, var(--background), transparent);
 }
 
 [data-slot="marquee-edge"][data-orientation="vertical"][data-side="top"] {

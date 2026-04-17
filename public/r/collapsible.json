@@ -3,9 +3,7 @@
   "name": "collapsible",
   "title": "Collapsible",
   "description": "A shadcn-style collapsible component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/collapsible.tsx",

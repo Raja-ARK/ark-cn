@@ -125,12 +125,12 @@ export const TabsList = ({
           data-orientation={orientation}
           className={cn(
             "absolute z-0",
-            "left-(--left) top-(--top) h-(--height) w-(--width)",
+            "start-(--left) top-(--top) h-(--height) w-(--width)",
             "transition-[width,height,left,top] duration-200 ease-in-out motion-reduce:transition-none",
             "data-[variant=default]:rounded-md data-[variant=default]:bg-background data-[variant=default]:shadow-sm/5 data-[variant=default]:dark:bg-input",
             "data-[variant=underline]:rounded-full data-[variant=underline]:bg-primary",
             "data-[variant=underline]:data-[orientation=horizontal]:top-auto data-[variant=underline]:data-[orientation=horizontal]:bottom-0 data-[variant=underline]:data-[orientation=horizontal]:h-0.5 data-[variant=underline]:data-[orientation=horizontal]:translate-y-px",
-            "data-[variant=underline]:data-[orientation=vertical]:left-0 data-[variant=underline]:data-[orientation=vertical]:w-0.5 data-[variant=underline]:data-[orientation=vertical]:-translate-x-px",
+            "data-[variant=underline]:data-[orientation=vertical]:start-0 data-[variant=underline]:data-[orientation=vertical]:w-0.5 data-[variant=underline]:data-[orientation=vertical]:-translate-x-px rtl:data-[variant=underline]:data-[orientation=vertical]:translate-x-px",
             indicatorClassName,
           )}
         />

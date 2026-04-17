@@ -3,10 +3,7 @@
   "name": "badge",
   "title": "Badge",
   "description": "A shadcn-style badge component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
   "files": [
     {
       "path": "src/components/ui/badge.tsx",

@@ -1,7 +1,6 @@
-"use client";
-
 import { ZoomInIcon, ZoomOutIcon } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   ImageCropper,
   ImageCropperGrid,
@@ -11,7 +10,6 @@ import {
   ImageCropperViewport,
   imageCropperHandles,
 } from "@/components/ui/image-cropper";
-import { Button } from "@/components/ui/button";
 
 const IMAGE_CROPPER_SAMPLE =
   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800";

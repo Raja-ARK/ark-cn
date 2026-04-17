@@ -3,12 +3,8 @@
   "name": "zoom-image",
   "title": "Zoom Image",
   "description": "A shadcn-style zoom image component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
-  "registryDependencies": [
-    "image-cropper"
-  ],
+  "dependencies": ["@ark-ui/react"],
+  "registryDependencies": ["image-cropper"],
   "files": [
     {
       "path": "src/components/ui/zoom-image.tsx",

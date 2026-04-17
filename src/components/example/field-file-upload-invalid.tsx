@@ -1,5 +1,3 @@
-"use client";
-
 import { FileTextIcon, XIcon } from "lucide-react";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import {

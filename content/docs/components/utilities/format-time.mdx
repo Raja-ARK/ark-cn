@@ -1,0 +1,55 @@
+---
+id: 73
+title: "Format Time"
+description: "A shadcn-style time formatting utility built with Ark UI primitives."
+url: "/components/format-time"
+referenceLink: "https://ark-ui.com/docs/utilities/format-time"
+---
+
+
+<ComponentPreview name="format-time-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <PackageInstall pkg="@ark-cn/format" shadcn />
+  </TabsContent>
+  <TabsContent value="manual">
+    <DocSteps>
+      <DocStep>
+        Install the dependency required by this utility:
+        <PackageInstall pkg="@ark-ui/react" />
+      </DocStep>
+      <DocStep>
+        Copy the shared formatter source into your app:
+        <ComponentSource name="format" title="components/ui/format.tsx" />
+      </DocStep>
+      <DocStep>
+        Update import aliases to match your project setup.
+      </DocStep>
+    </DocSteps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { FormatTime } from "@/components/ui/format"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="format-time-demo" />
+
+## API reference
+This utility mirrors Ark UI's time formatter. The ark-cn file exports it both as `FormatTime` and as `Format.Time`.
+
+See the [ARK UI documentation](https://ark-ui.com/docs/utilities/format-time) for the full API.
+

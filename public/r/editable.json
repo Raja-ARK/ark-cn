@@ -3,12 +3,8 @@
   "name": "editable",
   "title": "Editable",
   "description": "A shadcn-style editable component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
-  "registryDependencies": [
-    "button"
-  ],
+  "dependencies": ["@ark-ui/react"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "src/components/ui/editable.tsx",

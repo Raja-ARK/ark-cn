@@ -1,5 +1,3 @@
-"use client";
-
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import { ProgressLinear } from "@/components/ui/progress-linear";
 

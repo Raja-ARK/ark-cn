@@ -1,5 +1,3 @@
-"use client";
-
 import { Swap, SwapIndicator } from "@/components/ui/swap";
 
 const SwapDemo = () => (

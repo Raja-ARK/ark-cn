@@ -1,5 +1,3 @@
-"use client";
-
 import { PaperclipIcon, XIcon } from "lucide-react";
 import {
   FileUpload,

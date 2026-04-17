@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { codeToHtml } from "shiki/bundle/web";
 import { DOCS_CODE_THEMES } from "@/lib/docs-code-theme";

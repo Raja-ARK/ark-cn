@@ -57,7 +57,6 @@ export const LoadingPage = () => {
   );
 };
 
-
 export const DocsLayoutPage = () => {
   return (
     <section

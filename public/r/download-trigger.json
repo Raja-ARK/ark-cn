@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "download-trigger",
+  "title": "Download Trigger",
+  "description": "A shadcn-style download trigger utility built with Ark UI primitives.",
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "path": "src/components/ui/download-trigger.tsx",
+      "content": "\"use client\";\n\nimport {\n  DownloadTrigger as DownloadTriggerPrimitive,\n  type DownloadTriggerProps as DownloadTriggerPrimitiveProps,\n} from \"@ark-ui/react/download-trigger\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { buttonVariants } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nexport type DownloadTriggerProps = DownloadTriggerPrimitiveProps & {\n  size?: VariantProps<typeof buttonVariants>[\"size\"];\n  variant?: VariantProps<typeof buttonVariants>[\"variant\"];\n};\n\nexport const DownloadTrigger = ({\n  className,\n  size = \"default\",\n  variant = \"default\",\n  ...props\n}: DownloadTriggerProps) => (\n  <DownloadTriggerPrimitive\n    className={cn(buttonVariants({ variant, size, className }))}\n    data-slot=\"download-trigger\"\n    {...props}\n  />\n);\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/download-trigger.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

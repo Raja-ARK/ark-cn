@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 
 import { Slider, SliderField, SliderLabel } from "@/components/ui/slider";

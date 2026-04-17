@@ -1,5 +1,3 @@
-"use client";
-
 import { Portal } from "@ark-ui/react/portal";
 import { Button } from "@/components/ui/button";
 import {

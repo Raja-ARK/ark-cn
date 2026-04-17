@@ -3,10 +3,7 @@
   "name": "input-group",
   "title": "Input Group",
   "description": "A shadcn-style input group component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
   "files": [
     {
       "path": "src/components/ui/input-group.tsx",

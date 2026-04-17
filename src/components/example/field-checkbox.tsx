@@ -1,5 +1,3 @@
-"use client";
-
 import { Checkbox, CheckboxRoot } from "@/components/ui/checkbox";
 import { Field, FieldLabel } from "@/components/ui/field";
 

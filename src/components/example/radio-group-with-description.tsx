@@ -1,5 +1,3 @@
-"use client";
-
 import { Radio, RadioGroup } from "@/components/ui/radio-group";
 
 const RadioGroupWithDescriptionDemo = () => (

@@ -1,5 +1,3 @@
-"use client";
-
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { PinInputRoot, PinInputSlots } from "@/components/ui/pin-input";
 

@@ -3,13 +3,8 @@
   "name": "tour",
   "title": "Tour",
   "description": "A shadcn-style tour component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "button"
-  ],
+  "dependencies": ["@ark-ui/react", "lucide-react"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "src/components/ui/tour.tsx",

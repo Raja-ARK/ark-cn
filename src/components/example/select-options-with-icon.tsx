@@ -1,5 +1,3 @@
-"use client";
-
 import { Code2Icon, GlobeIcon, LayersIcon, ZapIcon } from "lucide-react";
 import {
   Select,

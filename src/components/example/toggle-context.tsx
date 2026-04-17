@@ -1,5 +1,3 @@
-"use client";
-
 import { BoldIcon } from "lucide-react";
 import { Toggle, ToggleContext } from "@/components/ui/toggle";
 

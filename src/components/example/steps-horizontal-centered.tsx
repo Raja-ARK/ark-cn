@@ -1,5 +1,3 @@
-"use client";
-
 import { BookUser, Check, CreditCard, Truck } from "lucide-react";
 import {
   Steps,

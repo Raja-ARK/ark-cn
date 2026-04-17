@@ -1,0 +1,56 @@
+---
+id: 70
+title: "Download Trigger"
+description: "A shadcn-style download trigger utility built with Ark UI primitives."
+url: "/components/download-trigger"
+referenceLink: "https://ark-ui.com/docs/utilities/download-trigger"
+---
+
+
+<ComponentPreview name="download-trigger-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <PackageInstall pkg="@ark-cn/download-trigger" shadcn />
+  </TabsContent>
+  <TabsContent value="manual">
+    <DocSteps>
+      <DocStep>
+        Install the dependency required by this utility:
+        <PackageInstall pkg="@ark-ui/react class-variance-authority" />
+      </DocStep>
+      <DocStep>
+        Copy the utility source into your app:
+        <ComponentSource name="download-trigger" title="components/ui/download-trigger.tsx" />
+      </DocStep>
+      <DocStep>
+        Copy the shared button source if you want the default ark-cn trigger styling:
+        <ComponentSource name="button" title="components/ui/button.tsx" />
+      </DocStep>
+    </DocSteps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { DownloadTrigger } from "@/components/ui/download-trigger"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="download-trigger-demo" />
+
+## API reference
+This utility mirrors Ark UI's `DownloadTrigger` and adds ark-cn-only `variant` and `size` props for button styling.
+
+See the [ARK UI documentation](https://ark-ui.com/docs/utilities/download-trigger) for the full API.
+

@@ -1,0 +1,55 @@
+---
+id: 77
+title: "Presence"
+description: "A shadcn-style presence utility built with Ark UI primitives."
+url: "/components/presence"
+referenceLink: "https://ark-ui.com/docs/utilities/presence"
+---
+
+
+<ComponentPreview name="presence-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <PackageInstall pkg="@ark-cn/presence" shadcn />
+  </TabsContent>
+  <TabsContent value="manual">
+    <DocSteps>
+      <DocStep>
+        Install the dependency required by this utility:
+        <PackageInstall pkg="@ark-ui/react" />
+      </DocStep>
+      <DocStep>
+        Copy the utility source into your app:
+        <ComponentSource name="presence" title="components/ui/presence.tsx" />
+      </DocStep>
+      <DocStep>
+        Update import aliases to match your project setup.
+      </DocStep>
+    </DocSteps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { Presence } from "@/components/ui/presence"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="presence-demo" />
+
+## API reference
+This utility mirrors the upstream Ark UI primitive.
+
+See the [ARK UI documentation](https://ark-ui.com/docs/utilities/presence) for the full API.
+

@@ -3,9 +3,7 @@
   "name": "slider",
   "title": "Slider",
   "description": "A shadcn-style slider component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/slider.tsx",

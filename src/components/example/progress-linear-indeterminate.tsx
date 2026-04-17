@@ -1,5 +1,3 @@
-"use client";
-
 import { ProgressLinear } from "@/components/ui/progress-linear";
 
 const ProgressLinearIndeterminate = () => (

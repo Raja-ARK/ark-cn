@@ -1,5 +1,3 @@
-"use client";
-
 import { useListCollection } from "@ark-ui/react";
 import {
   Combobox as ComboboxPrimitive,

@@ -1,5 +1,3 @@
-"use client";
-
 import { FileIcon, FileTextIcon, UploadIcon, XIcon } from "lucide-react";
 import {
   FileUpload,

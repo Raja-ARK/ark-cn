@@ -1,5 +1,3 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
 
 const BadgeLargeDemo = () => <Badge size="lg">Large</Badge>;

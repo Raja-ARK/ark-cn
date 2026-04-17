@@ -1,5 +1,3 @@
-"use client";
-
 import { createListCollection } from "@ark-ui/react/collection";
 import { Button } from "@/components/ui/button";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";

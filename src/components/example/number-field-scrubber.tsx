@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowLeftRightIcon } from "lucide-react";
 import {
   NumberFieldInput,

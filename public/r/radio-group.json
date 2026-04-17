@@ -3,9 +3,7 @@
   "name": "radio-group",
   "title": "Radio Group",
   "description": "A shadcn-style radio group component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/radio-group.tsx",

@@ -1,5 +1,3 @@
-"use client";
-
 import { ProgressCircular } from "@/components/ui/progress-circular";
 
 const ProgressCircularRow = () => (

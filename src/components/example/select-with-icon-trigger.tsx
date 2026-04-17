@@ -1,5 +1,3 @@
-"use client";
-
 import { CableIcon } from "lucide-react";
 import {
   Select,

@@ -3,12 +3,8 @@
   "name": "field",
   "title": "Field",
   "description": "A shadcn-style field component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
-  "registryDependencies": [
-    "input"
-  ],
+  "dependencies": ["@ark-ui/react"],
+  "registryDependencies": ["input"],
   "files": [
     {
       "path": "src/components/ui/field.tsx",

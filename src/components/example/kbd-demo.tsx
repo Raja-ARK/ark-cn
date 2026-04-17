@@ -1,5 +1,3 @@
-"use client";
-
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
 
 const KbdDemo = () => {

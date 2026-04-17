@@ -23,6 +23,7 @@ const DOC_GROUP_ORDER = [
   "components/feedback",
   "components/actions",
   "components/display",
+  "components/utilities",
 ] as const;
 
 const DOC_GROUP_TITLES: Record<string, string> = {
@@ -33,6 +34,7 @@ const DOC_GROUP_TITLES: Record<string, string> = {
   "components/feedback": "Feedback",
   "components/actions": "Actions",
   "components/display": "Display",
+  "components/utilities": "Utilities",
 };
 
 const toTitleCase = (value: string) => {

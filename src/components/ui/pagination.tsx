@@ -2,8 +2,8 @@
 
 import { Pagination as PaginationPrimitive } from "@ark-ui/react/pagination";
 import type { VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export type PaginationProps = PaginationPrimitive.RootProps;
 

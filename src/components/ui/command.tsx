@@ -5,8 +5,6 @@ import { Dialog } from "@ark-ui/react/dialog";
 import { Portal } from "@ark-ui/react/portal";
 import { SearchIcon } from "lucide-react";
 import type { ComponentProps } from "react";
-
-import { cn } from "@/lib/utils";
 import {
   Combobox,
   ComboboxEmpty,
@@ -23,6 +21,7 @@ import {
   type ComboboxProps,
   ComboboxSeparator,
 } from "@/components/ui/combobox";
+import { cn } from "@/lib/utils";
 
 /**
  * In-flow list: default Floating UI positioning takes the popup out of document

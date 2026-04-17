@@ -3,9 +3,7 @@
   "name": "avatar",
   "title": "Avatar",
   "description": "A shadcn-style avatar component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/avatar.tsx",

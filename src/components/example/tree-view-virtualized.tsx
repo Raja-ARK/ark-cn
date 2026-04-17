@@ -1,5 +1,3 @@
-"use client";
-
 import { ChevronDownIcon, FileIcon, LayersIcon } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";

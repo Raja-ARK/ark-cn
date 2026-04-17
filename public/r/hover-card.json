@@ -3,9 +3,7 @@
   "name": "hover-card",
   "title": "Hover Card",
   "description": "A shadcn-style hover card component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react"
-  ],
+  "dependencies": ["@ark-ui/react"],
   "files": [
     {
       "path": "src/components/ui/hover-card.tsx",

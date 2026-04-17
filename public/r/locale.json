@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "locale",
+  "title": "Locale Provider",
+  "description": "A shadcn-style locale provider utility built with Ark UI primitives.",
+  "dependencies": ["@ark-ui/react"],
+  "files": [
+    {
+      "path": "src/components/ui/locale.tsx",
+      "content": "\"use client\";\n\nimport {\n  LocaleProvider as LocaleProviderPrimitive,\n  type LocaleProviderProps as LocaleProviderPrimitiveProps,\n  useCollator,\n  useDateFormatter,\n  useFilter,\n  useLocaleContext,\n} from \"@ark-ui/react/locale\";\n\nexport type LocaleProviderProps = LocaleProviderPrimitiveProps;\n\nexport const LocaleProvider = (props: LocaleProviderProps) => (\n  <LocaleProviderPrimitive {...props} />\n);\n\nexport {\n  useCollator,\n  useDateFormatter,\n  useFilter,\n  useLocaleContext,\n};\n\nexport type {\n  UseCollatorProps,\n  UseDateFormatterProps,\n  UseFilterProps,\n  UseFilterReturn,\n  UseLocaleContext,\n} from \"@ark-ui/react/locale\";\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/locale.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -3,13 +3,8 @@
   "name": "button-group",
   "title": "Button Group",
   "description": "A shadcn-style button group component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "button"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "src/components/ui/button-group.tsx",

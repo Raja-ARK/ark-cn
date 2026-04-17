@@ -3,10 +3,7 @@
   "name": "progress-circular",
   "title": "Progress Circular",
   "description": "A shadcn-style progress circular component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
   "files": [
     {
       "path": "src/components/ui/progress-circular.tsx",

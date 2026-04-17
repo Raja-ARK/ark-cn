@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "format",
+  "title": "Format",
+  "description": "Shadcn-style format utilities (Byte, Time, RelativeTime) built with Ark UI primitives.",
+  "dependencies": ["@ark-ui/react"],
+  "files": [
+    {
+      "path": "src/components/ui/format.tsx",
+      "content": "\"use client\";\n\nimport {\n  Format as FormatPrimitive,\n  FormatByte as FormatBytePrimitive,\n  type FormatByteProps as FormatBytePrimitiveProps,\n  FormatRelativeTime as FormatRelativeTimePrimitive,\n  type FormatRelativeTimeProps as FormatRelativeTimePrimitiveProps,\n  FormatTime as FormatTimePrimitive,\n  type FormatTimeProps as FormatTimePrimitiveProps,\n} from \"@ark-ui/react/format\";\n\nexport type FormatByteProps = FormatBytePrimitiveProps;\n\nexport const FormatByte = (props: FormatByteProps) => (\n  <FormatBytePrimitive {...props} />\n);\n\nexport type FormatTimeProps = FormatTimePrimitiveProps;\n\nexport const FormatTime = (props: FormatTimeProps) => (\n  <FormatTimePrimitive {...props} />\n);\n\nexport type FormatRelativeTimeProps = FormatRelativeTimePrimitiveProps;\n\nexport const FormatRelativeTime = (props: FormatRelativeTimeProps) => (\n  <FormatRelativeTimePrimitive {...props} />\n);\n\nexport const Format = {\n  Byte: FormatPrimitive.Byte,\n  RelativeTime: FormatPrimitive.RelativeTime,\n  Time: FormatPrimitive.Time,\n} as const;\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/format.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

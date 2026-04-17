@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "focus-trap",
+  "title": "Focus Trap",
+  "description": "A shadcn-style focus trap utility built with Ark UI primitives.",
+  "dependencies": ["@ark-ui/react"],
+  "files": [
+    {
+      "path": "src/components/ui/focus-trap.tsx",
+      "content": "\"use client\";\n\nimport {\n  FocusTrap as FocusTrapPrimitive,\n  type FocusTrapProps as FocusTrapPrimitiveProps,\n} from \"@ark-ui/react/focus-trap\";\nimport { cn } from \"@/lib/utils\";\n\nexport type FocusTrapProps = FocusTrapPrimitiveProps;\n\nexport const FocusTrap = ({ className, ...props }: FocusTrapProps) => (\n  <FocusTrapPrimitive\n    className={cn(className)}\n    data-slot=\"focus-trap\"\n    {...props}\n  />\n);\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/focus-trap.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

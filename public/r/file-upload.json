@@ -3,13 +3,8 @@
   "name": "file-upload",
   "title": "File Upload",
   "description": "A shadcn-style file upload component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "button"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "src/components/ui/file-upload.tsx",

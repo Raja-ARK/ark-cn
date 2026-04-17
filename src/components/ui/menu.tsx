@@ -282,7 +282,7 @@ export const MenuTriggerItem = ({
 }: MenuTriggerItemProps) => (
   <MenuPrimitive.TriggerItem
     className={cn(
-      "relative flex cursor-pointer select-none items-center justify-between gap-2 rounded-sm py-1.5 pr-1.5 pl-2 text-sm outline-none transition-colors",
+      "relative flex cursor-pointer select-none items-center justify-between gap-2 rounded-sm py-1.5 pe-1.5 ps-2 text-sm outline-none transition-colors",
       "data-disabled:pointer-events-none data-disabled:opacity-50",
       "data-highlighted:bg-accent data-highlighted:text-accent-foreground",
       className,

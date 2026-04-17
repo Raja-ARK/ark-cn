@@ -1,5 +1,3 @@
-"use client";
-
 import { EllipsisVerticalIcon } from "lucide-react";
 import {
   Menu,

@@ -8,8 +8,8 @@ import {
 import type { VariantProps } from "class-variance-authority";
 import { XIcon } from "lucide-react";
 import type { ComponentProps, CSSProperties } from "react";
-import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export type SignaturePadOwnProps = {
   /** Canvas width in CSS pixels. Default 20rem. */

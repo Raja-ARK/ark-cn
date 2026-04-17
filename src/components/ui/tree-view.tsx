@@ -14,6 +14,7 @@ import {
   PlusIcon,
   TrashIcon,
 } from "lucide-react";
+import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -42,15 +43,16 @@ export const TreeViewLabel = ({ className, ...props }: TreeViewLabelProps) => (
 
 export type TreeViewTreeProps = TreeViewPrimitive.TreeProps;
 
-export const TreeViewTree = 
-  ({ className, ...props }: TreeViewTreeProps) => (
+export const TreeViewTree = forwardRef<HTMLDivElement, TreeViewTreeProps>(
+  ({ className, ...props }, ref) => (
     <TreeViewPrimitive.Tree
+      ref={ref}
       className={cn("flex flex-col", className)}
       data-slot="tree-view-tree"
       {...props}
     />
-  );
-
+  ),
+);
 
 export const TreeViewBranch = ({
   className,
@@ -69,7 +71,7 @@ export const TreeViewBranchControl = ({
 }: TreeViewPrimitive.BranchControlProps) => (
   <TreeViewPrimitive.BranchControl
     className={cn(
-      "group flex w-full cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-left transition-colors hover:bg-accent/60 data-selected:bg-accent data-disabled:pointer-events-none data-disabled:opacity-50",
+      "group flex w-full cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-start transition-colors hover:bg-accent/60 data-selected:bg-accent data-disabled:pointer-events-none data-disabled:opacity-50",
       className,
     )}
     data-slot="tree-view-branch-control"
@@ -121,10 +123,7 @@ export const TreeViewBranchIndentGuide = ({
   ...props
 }: TreeViewPrimitive.BranchIndentGuideProps) => (
   <TreeViewPrimitive.BranchIndentGuide
-    className={cn(
-      "absolute top-0 bottom-0 left-4 w-px bg-border/70",
-      className,
-    )}
+    className={cn("absolute inset-y-0 inset-s-4 w-px bg-border/70", className)}
     data-slot="tree-view-branch-indent-guide"
     {...props}
   />
@@ -136,7 +135,7 @@ export const TreeViewItem = ({
 }: TreeViewPrimitive.ItemProps) => (
   <TreeViewPrimitive.Item
     className={cn(
-      "flex w-full cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-left transition-colors hover:bg-accent/60 data-selected:bg-accent data-disabled:pointer-events-none data-disabled:opacity-50",
+      "flex w-full cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-start transition-colors hover:bg-accent/60 data-selected:bg-accent data-disabled:pointer-events-none data-disabled:opacity-50",
       className,
     )}
     data-slot="tree-view-item"
@@ -345,7 +344,7 @@ export const TreeViewShowcaseNodeRenderer = ({
               }}
             >
               <TreeViewBranchIndicator className="group/indicator">
-                <ChevronRight className="size-4 transition-transform group-data-[state=open]/indicator:rotate-90" />
+                <ChevronRight className="size-4 transition-transform rtl:rotate-180 group-data-[state=open]/indicator:rotate-90 rtl:group-data-[state=open]/indicator:rotate-90" />
               </TreeViewBranchIndicator>
               {checkbox ? <TreeViewShowcaseNodeCheckboxControl /> : null}
               {rename && nodeState.renaming ? (

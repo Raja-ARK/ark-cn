@@ -622,14 +622,8 @@
         "[data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"start\"]": {
           "background": "linear-gradient(to right, var(--background), transparent)"
         },
-        "[dir=\"rtl\"] [data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"start\"]": {
-          "background": "linear-gradient(to left, var(--background), transparent)"
-        },
         "[data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"end\"]": {
           "background": "linear-gradient(to left, var(--background), transparent)"
-        },
-        "[dir=\"rtl\"] [data-slot=\"marquee-edge\"][data-orientation=\"horizontal\"][data-side=\"end\"]": {
-          "background": "linear-gradient(to right, var(--background), transparent)"
         },
         "[data-slot=\"marquee-edge\"][data-orientation=\"vertical\"][data-side=\"top\"]": {
           "height": "20%",
@@ -1338,6 +1332,91 @@
           "path": "src/components/ui/zoom-image.tsx",
           "type": "registry:ui",
           "target": "src/components/ui/zoom-image.tsx"
+        }
+      ]
+    },
+    {
+      "name": "download-trigger",
+      "type": "registry:ui",
+      "title": "Download Trigger",
+      "description": "A shadcn-style download trigger utility built with Ark UI primitives.",
+      "dependencies": ["@ark-ui/react", "class-variance-authority"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/download-trigger.tsx",
+          "type": "registry:ui",
+          "target": "src/components/ui/download-trigger.tsx"
+        }
+      ]
+    },
+    {
+      "name": "focus-trap",
+      "type": "registry:ui",
+      "title": "Focus Trap",
+      "description": "A shadcn-style focus trap utility built with Ark UI primitives.",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/focus-trap.tsx",
+          "type": "registry:ui",
+          "target": "src/components/ui/focus-trap.tsx"
+        }
+      ]
+    },
+    {
+      "name": "format",
+      "type": "registry:ui",
+      "title": "Format",
+      "description": "Shadcn-style format utilities (Byte, Time, RelativeTime) built with Ark UI primitives.",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/format.tsx",
+          "type": "registry:ui",
+          "target": "src/components/ui/format.tsx"
+        }
+      ]
+    },
+    {
+      "name": "highlight",
+      "type": "registry:ui",
+      "title": "Highlight",
+      "description": "A shadcn-style text highlight utility built with Ark UI primitives.",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/highlight.tsx",
+          "type": "registry:ui",
+          "target": "src/components/ui/highlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "locale",
+      "type": "registry:ui",
+      "title": "Locale Provider",
+      "description": "A shadcn-style locale provider utility built with Ark UI primitives.",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/locale.tsx",
+          "type": "registry:ui",
+          "target": "src/components/ui/locale.tsx"
+        }
+      ]
+    },
+    {
+      "name": "presence",
+      "type": "registry:ui",
+      "title": "Presence",
+      "description": "A shadcn-style presence utility built with Ark UI primitives.",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/presence.tsx",
+          "type": "registry:ui",
+          "target": "src/components/ui/presence.tsx"
         }
       ]
     }

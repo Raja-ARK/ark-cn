@@ -1,5 +1,3 @@
-"use client";
-
 import { QrCode, QrCodeFrame, QrCodePattern } from "@/components/ui/qr-code";
 
 const QrCodeBasic = () => (

@@ -1,5 +1,3 @@
-"use client";
-
 import { parseDate } from "@ark-ui/react/date-picker";
 import {
   DatePicker,

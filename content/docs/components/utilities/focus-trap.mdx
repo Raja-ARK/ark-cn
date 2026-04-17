@@ -1,0 +1,55 @@
+---
+id: 71
+title: "Focus Trap"
+description: "A shadcn-style focus trap utility built with Ark UI primitives."
+url: "/components/focus-trap"
+referenceLink: "https://ark-ui.com/docs/utilities/focus-trap"
+---
+
+
+<ComponentPreview name="focus-trap-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <PackageInstall pkg="@ark-cn/focus-trap" shadcn />
+  </TabsContent>
+  <TabsContent value="manual">
+    <DocSteps>
+      <DocStep>
+        Install the dependency required by this utility:
+        <PackageInstall pkg="@ark-ui/react" />
+      </DocStep>
+      <DocStep>
+        Copy the utility source into your app:
+        <ComponentSource name="focus-trap" title="components/ui/focus-trap.tsx" />
+      </DocStep>
+      <DocStep>
+        Update import aliases to match your project setup.
+      </DocStep>
+    </DocSteps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { FocusTrap } from "@/components/ui/focus-trap"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="focus-trap-demo" />
+
+## API reference
+This utility mirrors the upstream Ark UI primitive.
+
+See the [ARK UI documentation](https://ark-ui.com/docs/utilities/focus-trap) for the full API.
+

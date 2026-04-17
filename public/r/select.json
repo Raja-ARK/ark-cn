@@ -3,15 +3,8 @@
   "name": "select",
   "title": "Select",
   "description": "A shadcn-style select component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "lucide-react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "button",
-    "button-group"
-  ],
+  "dependencies": ["@ark-ui/react", "lucide-react", "class-variance-authority"],
+  "registryDependencies": ["button", "button-group"],
   "files": [
     {
       "path": "src/components/ui/select.tsx",

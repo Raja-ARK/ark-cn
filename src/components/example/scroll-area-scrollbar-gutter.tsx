@@ -1,5 +1,3 @@
-"use client";
-
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const rows = Array.from({ length: 40 }, (_, i) => `Reserved gutter · ${i}`);

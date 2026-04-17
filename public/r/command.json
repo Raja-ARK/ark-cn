@@ -3,13 +3,8 @@
   "name": "command",
   "title": "Command",
   "description": "A shadcn-style command component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "combobox"
-  ],
+  "dependencies": ["@ark-ui/react", "lucide-react"],
+  "registryDependencies": ["combobox"],
   "files": [
     {
       "path": "src/components/ui/command.tsx",

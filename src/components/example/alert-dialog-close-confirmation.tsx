@@ -1,5 +1,3 @@
-"use client";
-
 import { AlertTriangleIcon } from "lucide-react";
 import {
   AlertDialog,

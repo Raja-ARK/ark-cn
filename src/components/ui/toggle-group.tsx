@@ -3,8 +3,8 @@
 import { ToggleGroup as ToggleGroupPrimitive } from "@ark-ui/react/toggle-group";
 import { cva, type VariantProps } from "class-variance-authority";
 import { createContext, useContext } from "react";
-import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const toggleGroupRootVariants = cva(
   "inline-flex w-fit gap-px rounded-lg border border-input bg-muted/40 p-0.5 data-[orientation=vertical]:flex-col",

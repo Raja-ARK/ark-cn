@@ -3,10 +3,7 @@
   "name": "alert",
   "title": "Alert",
   "description": "A shadcn-style alert component built with Ark UI primitives.",
-  "dependencies": [
-    "@ark-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@ark-ui/react", "class-variance-authority"],
   "files": [
     {
       "path": "src/components/ui/alert.tsx",

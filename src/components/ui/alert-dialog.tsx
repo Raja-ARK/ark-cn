@@ -5,9 +5,8 @@ import { ark } from "@ark-ui/react/factory";
 import { Portal } from "@ark-ui/react/portal";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type ComponentProps, forwardRef } from "react";
-
-import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const AlertDialog = ({
   closeOnInteractOutside = false,
@@ -123,7 +122,7 @@ export const AlertDialogHeader = ({
   ...props
 }: ComponentProps<typeof ark.div>) => (
   <ark.div
-    className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
+    className={cn("flex flex-col gap-2 text-center sm:text-start", className)}
     {...props}
   />
 );

@@ -1,5 +1,3 @@
-"use client";
-
 import { ClipboardIcon, XIcon } from "lucide-react";
 import {
   FileUploadContext,

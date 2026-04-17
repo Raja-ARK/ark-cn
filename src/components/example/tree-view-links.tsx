@@ -1,5 +1,3 @@
-"use client";
-
 import {
   createTreeCollection,
   TreeView,

@@ -1,5 +1,3 @@
-"use client";
-
 import { ZoomImage } from "@/components/ui/zoom-image";
 
 const IMAGE_CROPPER_SAMPLE =

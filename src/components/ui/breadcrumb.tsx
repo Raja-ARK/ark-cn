@@ -80,7 +80,7 @@ export const BreadcrumbSeparator = ({
     className={cn("[&>svg]:size-3.5", className)}
     {...props}
   >
-    {children ?? <ChevronRightIcon className="cn-rtl-flip" />}
+    {children ?? <ChevronRightIcon className="rtl:rotate-180" />}
   </ark.li>
 );
 

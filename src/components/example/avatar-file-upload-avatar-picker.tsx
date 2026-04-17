@@ -1,5 +1,3 @@
-"use client";
-
 import { CameraIcon, XIcon } from "lucide-react";
 import {
   FileUpload,

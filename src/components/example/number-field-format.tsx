@@ -1,5 +1,3 @@
-"use client";
-
 import {
   NumberFieldInput,
   NumberFieldRoot,

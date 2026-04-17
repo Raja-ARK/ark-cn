@@ -16,6 +16,7 @@ type ThemeProviderProps = {
 };
 
 type ThemeProviderState = {
+  systemTheme: Exclude<Theme, "system">;
   theme: Theme;
   setTheme: (theme: Theme) => void;
 };
@@ -30,20 +31,8 @@ const isTheme = (value: string | null): value is Theme => {
   return value === "dark" || value === "light" || value === "system";
 };
 
-const getInitialTheme = (storageKey: string, defaultTheme: Theme): Theme => {
-  if (typeof window === "undefined") {
-    return defaultTheme;
-  }
-
-  const storedTheme = window.localStorage.getItem(storageKey);
-  return isTheme(storedTheme) ? storedTheme : defaultTheme;
-};
-
-const applyTheme = (theme: Theme) => {
+const applyTheme = (theme: Theme, systemTheme: Exclude<Theme, "system">) => {
   const root = window.document.documentElement;
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
   const resolvedTheme = theme === "system" ? systemTheme : theme;
 
   root.classList.remove("light", "dark");
@@ -56,23 +45,36 @@ export const ThemeProvider = ({
   defaultTheme = "system",
   storageKey = THEME_STORAGE_KEY,
 }: ThemeProviderProps) => {
-  const [theme, setThemeState] = useState<Theme>(() =>
-    getInitialTheme(storageKey, defaultTheme),
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
+  const [systemTheme, setSystemTheme] = useState<Exclude<Theme, "system">>(
+    "light",
   );
 
   useEffect(() => {
-    applyTheme(theme);
+    const storedTheme = window.localStorage.getItem(storageKey);
 
-    if (theme !== "system") {
+    if (!isTheme(storedTheme)) {
       return;
     }
 
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = () => applyTheme("system");
+    setThemeState((currentTheme) =>
+      currentTheme === storedTheme ? currentTheme : storedTheme,
+    );
+  }, [storageKey]);
 
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, [theme]);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const updateSystemTheme = () =>
+      setSystemTheme(mediaQuery.matches ? "dark" : "light");
+
+    updateSystemTheme();
+    mediaQuery.addEventListener("change", updateSystemTheme);
+    return () => mediaQuery.removeEventListener("change", updateSystemTheme);
+  }, []);
+
+  useEffect(() => {
+    applyTheme(theme, systemTheme);
+  }, [theme, systemTheme]);
 
   const setTheme = useCallback(
     (nextTheme: Theme) => {
@@ -84,10 +86,11 @@ export const ThemeProvider = ({
 
   const value = useMemo(
     () => ({
+      systemTheme,
       theme,
       setTheme,
     }),
-    [theme, setTheme],
+    [systemTheme, theme, setTheme],
   );
 
   return (
